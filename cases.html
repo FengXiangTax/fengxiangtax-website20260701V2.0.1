@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客户案例 - 烽享财税</title>
+  <link rel="icon" href="images/biaoqianlogo.png">
+  <meta name="description" content="烽享财税客户案例展示，涵盖灵活用工、数电发票、工商财税、税务咨询、企业服务等成功案例。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero {
+      padding-top: calc(var(--header-height) + 60px);
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #FFFFFF 100%);
+      text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+    .page-hero h1 .highlight { color: var(--primary); }
+    .page-hero p { font-size: 16px; color: var(--text-secondary); }
+    .cases-filter { padding: 40px 0 0; }
+    .filter-tabs { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .filter-tab {
+      padding: 8px 24px; font-size: 14px; font-weight: 600;
+      border: 2px solid var(--border-color); border-radius: 30px;
+      background: var(--bg-white); color: var(--text-secondary);
+      cursor: pointer; transition: var(--transition);
+    }
+    .filter-tab:hover,
+    .filter-tab.active {
+      border-color: var(--primary); color: var(--primary);
+      background: var(--primary-bg);
+    }
+    .cases-section { padding: 40px 0 80px; }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .case-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .case-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+    .case-card-image {
+      height: 180px;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 13px;
+    }
+    .case-card-body { padding: 24px; }
+    .case-tag {
+      display: inline-block;
+      font-size: 12px; font-weight: 600;
+      color: var(--primary); background: var(--primary-bg);
+      padding: 3px 10px; border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .case-card-body h3 {
+      font-size: 16px; font-weight: 700;
+      margin-bottom: 8px; line-height: 1.5;
+    }
+    .case-card-body p {
+      font-size: 14px; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 16px;
+    }
+    .case-meta {
+      display: flex; justify-content: space-between;
+      font-size: 13px; color: var(--text-light);
+      padding-top: 12px; border-top: 1px solid var(--border-color);
+    }
+    @media (max-width: 1024px) {
+      .cases-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .cases-grid { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我们</a>
+        <a href="services.html">主营业务</a>
+        <a href="cases.html" class="active">客户案例</a>
+        <a href="news.html">行业动态</a>
+        <a href="contact.html">联系我们</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:15217609018" class="btn-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          152-1760-9018
+        </a>
+        <a href="contact.html" class="btn-primary">免费咨询</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">首页</a><a href="about.html">关于我们</a><a href="services.html">主营业务</a><a href="cases.html" class="active">客户案例</a><a href="news.html">行业动态</a><a href="contact.html">联系我们</a>
+    <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a></div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><span class="highlight">客户案例</span></h1>
+      <p>真实客户反馈，见证烽享财税专业服务价值</p>
+    </div>
+  </section>
+
+  <section class="cases-filter">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">全部案例</button>
+        <button class="filter-tab" data-filter="flexible">灵活用工</button>
+        <button class="filter-tab" data-filter="invoice">数电发票</button>
+        <button class="filter-tab" data-filter="business">工商财税</button>
+        <button class="filter-tab" data-filter="tax">税务咨询</button>
+        <button class="filter-tab" data-filter="enterprise">企业服务</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cases-section">
+    <div class="container">
+      <div class="cases-grid">
+
+        <a href="case-detail.html?id=1" class="case-link">
+        <div class="case-card fade-up" data-category="flexible">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">灵活用工</span>
+            <h3>某物流平台灵活用工改造</h3>
+            <p>为日单量超10万的物流平台搭建灵活用工体系，覆盖全国12个税地，年度合规节支超300万元。</p>
+            <div class="case-meta">
+              <span>物流行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=2" class="case-link">
+        <div class="case-card fade-up" data-category="flexible">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">灵活用工</span>
+            <h3>头部MCN机构灵活用工方案</h3>
+            <p>为粉丝量过亿的MCN机构定制灵活用工方案，解决主播、达人结算合规问题，降低企业税负约25%。</p>
+            <div class="case-meta">
+              <span>直播行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=3" class="case-link">
+        <div class="case-card fade-up" data-category="invoice">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">数电发票</span>
+            <h3>连锁零售企业数电发票改造</h3>
+            <p>为拥有200+门店的连锁零售企业完成数电发票系统对接，日均开票量达5000+张，零差错运行。</p>
+            <div class="case-meta">
+              <span>零售行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=4" class="case-link">
+        <div class="case-card fade-up" data-category="business">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">工商财税</span>
+            <h3>跨境电商公司全套工商注册</h3>
+            <p>为跨境电商团队三地完成注册、开户、税务登记全流程代办，最快3天拿照。</p>
+            <div class="case-meta">
+              <span>跨境电商</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=5" class="case-link">
+        <div class="case-card fade-up" data-category="business">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">工商财税</span>
+            <h3>科技公司代理记账与软著申请</h3>
+            <p>为一家AI创业公司提供代理记账+软著申请一站式服务，半年内成功申请软件著作权5项。</p>
+            <div class="case-meta">
+              <span>科技行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=6" class="case-link">
+        <div class="case-card fade-up" data-category="tax">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">税务咨询</span>
+            <h3>金税四期下某集团税务合规整改</h3>
+            <p>协助某集团完成金税四期切换前的税务合规自查与整改，消除历史涉税风险18个，顺利通过评估。</p>
+            <div class="case-meta">
+              <span>集团企业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=7" class="case-link">
+        <div class="case-card fade-up" data-category="tax">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">税务咨询</span>
+            <h3>电商企业税务稽查应对方案</h3>
+            <p>为一家GMV超2亿的电商企业提供税务稽查应对方案，协助完成自查补税，避免行政处罚。</p>
+            <div class="case-meta">
+              <span>电商行业</span>
+              <span>2024年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=8" class="case-link">
+        <div class="case-card fade-up" data-category="flexible">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">灵活用工</span>
+            <h3>在线教育平台讲师结算合规</h3>
+            <p>为在线教育机构设计讲师灵活用工结算方案，覆盖全国300+兼职讲师，个税合规申报零差错。</p>
+            <div class="case-meta">
+              <span>教育行业</span>
+              <span>2024年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=9" class="case-link">
+        <div class="case-card fade-up" data-category="invoice">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">数电发票</span>
+            <h3>物业服务企业数电发票落地</h3>
+            <p>为覆盖10城的物业集团部署数电发票系统，月均开票量8000+，实现电子发票自动开具与归档。</p>
+            <div class="case-meta">
+              <span>物业服务</span>
+              <span>2024年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+
+        <a href="case-detail.html?id=10" class="case-link">
+        <div class="case-card fade-up" data-category="invoice">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">数电发票</span>
+            <h3>连锁餐饮品牌扫码开票系统</h3>
+            <p>为拥有50+门店的连锁餐饮品牌搭建扫码开票系统，顾客扫码即开发票，开票效率提升80%。</p>
+            <div class="case-meta">
+              <span>餐饮行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=11" class="case-link">
+        <div class="case-card fade-up" data-category="business">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">工商财税</span>
+            <h3>OPC公司一站式财税综合服务</h3>
+            <p>为一家OPC（一人有限公司）提供注册、记账、报税、汇算清缴全流程财税综合服务，年度财税成本降低40%。</p>
+            <div class="case-meta">
+              <span>一人有限公司</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=12" class="case-link">
+        <div class="case-card fade-up" data-category="tax">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">税务咨询</span>
+            <h3>游戏出海企业税务合规计划方案</h3>
+            <p>为游戏出海企业定制跨境税务合规计划方案，覆盖海外收入回流、转让定价等合规要点，节税超百万元。</p>
+            <div class="case-meta">
+              <span>游戏行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <!-- 企业服务案例 -->
+
+        <a href="case-detail.html?id=13" class="case-link">
+        <div class="case-card fade-up" data-category="enterprise">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><line x1="16" y1="18" x2="8" y2="18"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">企业服务</span>
+            <h3>连锁餐饮品牌微信小程序开发</h3>
+            <p>为某中式快餐品牌开发扫码点餐+会员管理小程序，上线首月订单量突破3万单，人力成本降低30%。</p>
+            <div class="case-meta">
+              <span>餐饮行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=14" class="case-link">
+        <div class="case-card fade-up" data-category="enterprise">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">企业服务</span>
+            <h3>财税咨询公司品牌官网建设</h3>
+            <p>为一家财税咨询公司搭建响应式官网，集成在线预约和方案展示功能，上线后月均获客量增长150%。</p>
+            <div class="case-meta">
+              <span>财税行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=15" class="case-link">
+        <div class="case-card fade-up" data-category="enterprise">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">企业服务</span>
+            <h3>本地商户地图推广方案落地</h3>
+            <p>为20+本地商户在高德、百度地图完成店铺入驻和POI优化，地图搜索曝光量平均提升200%。</p>
+            <div class="case-meta">
+              <span>本地生活</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=16" class="case-link">
+        <div class="case-card fade-up" data-category="enterprise">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">企业服务</span>
+            <h3>本地餐饮大众点评运营推广</h3>
+            <p>为一家本地餐饮品牌运营大众点评店铺，优化团购套餐+评价管理，月均到店转化率提升65%。</p>
+            <div class="case-meta">
+              <span>餐饮行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+        <a href="case-detail.html?id=17" class="case-link">
+        <div class="case-card fade-up" data-category="enterprise">
+          <div class="case-card-image">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="8" x2="18" y2="8"/><line x1="6" y1="14" x2="18" y2="14"/><line x1="6" y1="11" x2="18" y2="11"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+          </div>
+          <div class="case-card-body">
+            <span class="case-tag">企业服务</span>
+            <h3>连锁餐厅数字化转型全案</h3>
+            <p>为3家连锁餐厅提供扫码点餐+后厨管理+会员营销一体化数字方案，翻台率提升40%，月营收增长50万+。</p>
+            <div class="case-meta">
+              <span>餐饮行业</span>
+              <span>2025年</span>
+            </div>
+          </div>
+        </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>想成为我们的下一个成功案例？</h2>
+      <p>立即联系我们，获取专属财税解决方案</p>
+      <a href="contact.html" class="btn-white">
+        免费咨询
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+          </a>
+          <p>广东烽享联动信息科技有限公司<br>广州烽享云科技信息有限公司<br>广州烽享企业服务有限公司<br>专注企业全生命周期一站式财税综合服务</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="微信" title="微信">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.046c.133 0 .241-.11.241-.245 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-2.036 2.84c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.97-.983zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.969-.983z"/></svg>
+              <div class="qr-tooltip"><img src="images/wechat.png" alt="微信二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信视频号" title="微信视频号">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <div class="qr-tooltip"><img src="images/shipinhao.png" alt="视频号二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="抖音" title="抖音">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              <div class="qr-tooltip"><img src="images/douyin.png" alt="抖音二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信公众号" title="微信公众号">
+              <img src="images/gzhlogo.png" alt="微信公众号" style="width:18px;height:18px;object-fit:contain;">
+              <div class="qr-tooltip"><img src="images/gzh.jpg" alt="公众号二维码"></div>
+            </a>
+          
+          </div>
+        </div>
+        <div class="footer-col"><h4>主营业务</h4><a href="services.html#flexible">灵活用工</a><a href="services.html#invoice">数电发票</a><a href="services.html#business">工商财税</a><a href="services.html#tax">税务咨询</a><a href="services.html#enterprise">企业服务</a></div>
+        <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
+        <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2023-2026 烽享财税 FengXiangTax. All Rights Reserved.</div>
+        <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2024339069号</a> | <img src="images/gonganlogo.png" alt="公安备案" style="height:14px;vertical-align:middle;margin-right:4px;"><a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener">粤公网安备44010602011937号</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Cases filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      var filterTabs = document.querySelectorAll('.filter-tab');
+      var caseLinks = document.querySelectorAll('.case-link');
+
+      filterTabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          filterTabs.forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          var filter = tab.getAttribute('data-filter');
+
+          caseLinks.forEach(function(link) {
+            var card = link.querySelector('.case-card');
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              link.style.display = '';
+              card.classList.add('visible');
+            } else {
+              link.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

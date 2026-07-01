@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 - 烽享财税</title>
+  <link rel="icon" href="images/biaoqianlogo.png">
+  <meta name="description" content="联系烽享财税，获取免费财税合规咨询。电话：152-1760-9018">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero {
+      padding-top: calc(var(--header-height) + 30px);
+      padding-bottom: 30px;
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #FFFFFF 100%);
+      text-align: center;
+    }
+    .page-hero h1 { font-size: 30px; font-weight: 700; margin-bottom: 6px; }
+    .page-hero h1 .highlight { color: var(--primary); }
+    .page-hero p { font-size: 14px; color: var(--text-secondary); }
+    .contact-section { padding: 40px 0 60px; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .contact-info h2 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+    .contact-info h2 .highlight { color: var(--primary); }
+    .contact-info > p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6; }
+    .info-list { display: flex; flex-direction: column; gap: 16px; flex: 1 1 auto; }
+    .info-item { display: flex; gap: 12px; align-items: flex-start; }
+    .info-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--primary-bg); border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+    }
+    .info-icon svg { width: 18px; height: 18px; }
+    .info-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .info-item p { font-size: 13px; color: var(--text-secondary); }
+    .info-item a { color: var(--primary); font-weight: 600; }
+    .qr-cards { display: flex; gap: 12px; margin-top: auto; padding-top: 20px; }
+    .qr-card {
+      flex: 1; padding: 12px; background: var(--bg-light);
+      border-radius: var(--radius-md); text-align: center;
+    }
+    .qr-card .qr-placeholder {
+      width: 80px; height: 80px; margin: 0 auto 8px;
+      background: var(--bg-white); border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .qr-card .qr-placeholder img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .qr-card p { font-size: 12px; color: var(--text-secondary); }
+    .form-card {
+      background: var(--bg-white); border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg); padding: 0;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-card h3 {
+      font-size: 16px; font-weight: 700; margin: 0; padding: 16px 20px 4px;
+    }
+    .form-card > p {
+      font-size: 12px; color: var(--text-secondary); margin: 0; padding: 0 20px 12px;
+    }
+    .form-iframe-wrap {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .form-iframe-wrap iframe {
+      width: 100%;
+      height: calc(100% + 160px);
+      margin-top: -160px;
+      border: 0;
+      display: block;
+    }
+    .form-iframe-wrap::before,
+    .form-iframe-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      background: #fff;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .form-iframe-wrap::before { left: 0; }
+    .form-iframe-wrap::after { right: 0; }
+    .iframe-bottom-mask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: #fff;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .form-iframe-wrap::before,
+    .form-iframe-wrap::after {
+      width: 40px;
+    }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .qr-cards { flex-direction: column; }
+      .form-card { padding: 24px; }
+      .page-hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我们</a>
+        <a href="services.html">主营业务</a>
+        <a href="cases.html">客户案例</a>
+        <a href="news.html">行业动态</a>
+        <a href="contact.html" class="active">联系我们</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:15217609018" class="btn-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          152-1760-9018
+        </a>
+        <a href="contact.html" class="btn-primary">免费咨询</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">首页</a><a href="about.html">关于我们</a><a href="services.html">主营业务</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a><a href="contact.html" class="active">联系我们</a>
+    <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a></div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><span class="highlight">联系我们</span></h1>
+      <p>获取专属财税合规方案，让专业的人做专业的事</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>我们随时为您<span class="highlight">服务</span></h2>
+          <p>无论是工商注册、代理记账，还是灵活用工、税务咨询，我们的专业团队随时为您提供一对一咨询服务。</p>
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>电话咨询</h4>
+                <p><a href="tel:15217609018">152-1760-9018</a></p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>公司地址</h4>
+                <p>广州市海珠区新港中路397号 T.I.T创意园自编3-9号</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h4>微信公众号</h4>
+                <p>烽享财税（ID: FengXiangTax）</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4>工作时间</h4>
+                <p>周一至周五 9:00 - 18:00</p>
+              </div>
+            </div>
+          </div>
+          <div class="qr-cards">
+            <div class="qr-card">
+              <div class="qr-placeholder"><img src="images/wechat.png" alt="微信客服" style="width:80px;height:80px;border-radius:4px;"></div>
+              <p>微信扫码加好友</p>
+            </div>
+            <div class="qr-card">
+              <div class="qr-placeholder"><img src="images/gzh.jpg" alt="公众号" style="width:80px;height:80px;border-radius:4px;"></div>
+              <p>关注烽享财税</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-card">
+          <h3>在线留言</h3>
+          <p>填写以下信息，我们将在1个工作日内与您联系</p>
+          <div class="form-iframe-wrap">
+            <iframe src="https://v.wjx.cn/vm/OUrZaht.aspx?width=750&source=iframe&s=t"></iframe>
+            <div class="iframe-bottom-mask"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+          </a>
+          <p>广东烽享联动信息科技有限公司<br>广州烽享云科技信息有限公司<br>广州烽享企业服务有限公司<br>专注企业全生命周期一站式财税综合服务</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="微信" title="微信">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.046c.133 0 .241-.11.241-.245 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-2.036 2.84c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.97-.983zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.969-.983z"/></svg>
+              <div class="qr-tooltip"><img src="images/wechat.png" alt="微信二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信视频号" title="微信视频号">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <div class="qr-tooltip"><img src="images/shipinhao.png" alt="视频号二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="抖音" title="抖音">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              <div class="qr-tooltip"><img src="images/douyin.png" alt="抖音二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信公众号" title="微信公众号">
+              <img src="images/gzhlogo.png" alt="微信公众号" style="width:18px;height:18px;object-fit:contain;">
+              <div class="qr-tooltip"><img src="images/gzh.jpg" alt="公众号二维码"></div>
+            </a>
+          
+          </div>
+        </div>
+        <div class="footer-col"><h4>主营业务</h4><a href="services.html#flexible">灵活用工</a><a href="services.html#invoice">数电发票</a><a href="services.html#business">工商财税</a><a href="services.html#tax">税务咨询</a><a href="services.html#enterprise">企业服务</a></div>
+        <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
+        <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2023-2026 烽享财税 FengXiangTax. All Rights Reserved.</div>
+        <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2024339069号</a> | <img src="images/gonganlogo.png" alt="公安备案" style="height:14px;vertical-align:middle;margin-right:4px;"><a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener">粤公网安备44010602011937号</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

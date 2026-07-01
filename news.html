@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>行业动态 - 烽享财税</title>
+  <link rel="icon" href="images/biaoqianlogo.png">
+  <meta name="description" content="烽享财税行业动态，最新财税政策解读、行业资讯、公司动态，帮您及时掌握财税领域前沿信息。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero {
+      padding-top: calc(var(--header-height) + 60px);
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #FFFFFF 100%);
+      text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+    .page-hero h1 .highlight { color: var(--primary); }
+    .page-hero p { font-size: 16px; color: var(--text-secondary); }
+
+    /* Filter Tabs */
+    .news-filter { padding: 40px 0 0; }
+    .filter-tabs { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .filter-tab {
+      padding: 8px 24px; font-size: 14px; font-weight: 600;
+      border: 2px solid var(--border-color); border-radius: 30px;
+      background: var(--bg-white); color: var(--text-secondary);
+      cursor: pointer; transition: var(--transition);
+    }
+    .filter-tab:hover,
+    .filter-tab.active {
+      border-color: var(--primary); color: var(--primary);
+      background: var(--primary-bg);
+    }
+
+    /* News Section */
+    .news-section { padding: 40px 0 80px; }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Featured News (first row - larger, 2 columns by default) */
+    .news-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 8px;
+    }
+    .news-featured .news-card { display: grid; grid-template-columns: 1fr 1fr; }
+    .news-featured .news-card-image { height: 100%; min-height: 280px; }
+    .news-featured .news-card-body { padding: 32px; }
+    .news-featured .news-card-body h3 { font-size: 20px; }
+    .news-featured .news-card-body p { font-size: 15px; line-height: 1.8; }
+
+    /* Compact mode for filtered results */
+    .news-featured.compact {
+      display: contents;
+    }
+    .news-featured.compact .news-card {
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: 1fr;
+    }
+    .news-featured.compact .news-card-image {
+      height: 180px;
+      min-height: auto;
+    }
+    .news-featured.compact .news-card-body {
+      padding: 24px;
+    }
+    .news-featured.compact .news-card-body h3 {
+      font-size: 17px;
+    }
+    .news-featured.compact .news-card-body p {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .news-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+    .news-card-image {
+      height: 180px;
+      background: linear-gradient(135deg, var(--primary-bg), #FFF0E0);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary); position: relative; overflow: hidden;
+    }
+    .news-card-image .news-icon-bg {
+      position: absolute;
+      right: -20px; bottom: -20px;
+      opacity: 0.08;
+      transform: rotate(-15deg);
+    }
+    .news-card-image .news-icon-main {
+      position: relative; z-index: 1;
+    }
+    .news-card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+    .news-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .news-tag {
+      display: inline-block;
+      font-size: 12px; font-weight: 600;
+      padding: 3px 12px; border-radius: 12px;
+    }
+    .news-tag.policy { color: #E07800; background: #FFF3E0; }
+    .news-tag.industry { color: #1976D2; background: #E3F2FD; }
+    .news-tag.company { color: #388E3C; background: #E8F5E9; }
+    .news-date { font-size: 13px; color: var(--text-light); }
+    .news-card-body h3 {
+      font-size: 17px; font-weight: 700;
+      margin-bottom: 10px; line-height: 1.6;
+      color: var(--text-primary);
+    }
+    .news-card-body h3 a {
+      color: inherit; text-decoration: none;
+      transition: var(--transition);
+    }
+    .news-card-body h3 a:hover { color: var(--primary); }
+    .news-card-body p {
+      font-size: 14px; color: var(--text-secondary);
+      line-height: 1.8; margin-bottom: 16px;
+      flex: 1;
+    }
+    .news-card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; color: var(--text-light);
+      padding-top: 14px; border-top: 1px solid var(--border-color);
+    }
+    .news-read {
+      display: flex; align-items: center; gap: 4px;
+      color: var(--primary); font-weight: 600; text-decoration: none;
+      font-size: 13px; transition: var(--transition);
+    }
+    .news-read:hover { gap: 8px; }
+    .news-read svg { transition: var(--transition); }
+
+    /* Empty State */
+    .news-empty {
+      grid-column: 1 / -1;
+      text-align: center; padding: 80px 0;
+    }
+    .news-empty svg { color: var(--text-light); margin-bottom: 16px; }
+    .news-empty p { font-size: 15px; color: var(--text-secondary); }
+
+    @media (max-width: 1024px) {
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+      .news-featured { grid-template-columns: 1fr; }
+      .news-featured .news-card { grid-template-columns: 1fr; }
+      .news-featured .news-card-image { height: 180px; min-height: auto; }
+    }
+    @media (max-width: 768px) {
+      .news-grid { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 28px; }
+      .news-card-image { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我们</a>
+        <a href="services.html">主营业务</a>
+        <a href="cases.html">客户案例</a>
+        <a href="news.html" class="active">行业动态</a>
+        <a href="contact.html">联系我们</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:15217609018" class="btn-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          152-1760-9018
+        </a>
+        <a href="contact.html" class="btn-primary">免费咨询</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">首页</a><a href="about.html">关于我们</a><a href="services.html">主营业务</a><a href="cases.html">客户案例</a><a href="news.html" class="active">行业动态</a><a href="contact.html">联系我们</a>
+    <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a></div>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><span class="highlight">行业动态</span></h1>
+      <p>财税政策深度解读 · 行业前沿资讯 · 烽享最新动态</p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="news-filter">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">全部</button>
+        <button class="filter-tab" data-filter="policy">政策解读</button>
+        <button class="filter-tab" data-filter="industry">行业资讯</button>
+        <button class="filter-tab" data-filter="company">公司动态</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Grid -->
+  <section class="news-section">
+    <div class="container">
+      <div class="news-grid">
+
+        <!-- Featured: 政策解读 -->
+        <div class="news-featured">
+          <div class="news-card fade-up" data-category="policy">
+            <div class="news-card-image">
+              <svg class="news-icon-bg" width="160" height="160" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <svg class="news-icon-main" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <div class="news-card-body">
+              <div class="news-card-top">
+                <span class="news-tag policy">政策解读</span>
+                <span class="news-date">2026-06-28</span>
+              </div>
+              <h3><a href="news-detail.html?id=1">金税四期全面推开，企业该如何做好税务合规准备？</a></h3>
+              <p>随着金税四期系统在全国范围内逐步上线，企业面临的税务监管环境发生深刻变化。本文从发票管理、申报流程、风险排查三个维度，为企业提供可落地的合规方案。</p>
+              <div class="news-card-footer">
+                <span>阅读 2.3k</span>
+                <a href="news-detail.html?id=1" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="news-card fade-up" data-category="industry">
+            <div class="news-card-image">
+              <svg class="news-icon-bg" width="160" height="160" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <svg class="news-icon-main" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="news-card-body">
+              <div class="news-card-top">
+                <span class="news-tag industry">行业资讯</span>
+                <span class="news-date">2026-06-25</span>
+              </div>
+              <h3><a href="news-detail.html?id=2">2026灵活用工市场规模突破1.5万亿，合规化成核心竞争力</a></h3>
+              <p>艾瑞咨询最新报告显示，中国灵活用工市场2026年规模预计突破1.5万亿元。在监管趋严的背景下，合规化服务能力成为平台竞争的核心壁垒。</p>
+              <div class="news-card-footer">
+                <span>阅读 1.8k</span>
+                <a href="news-detail.html?id=2" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 3 -->
+        <div class="news-card fade-up" data-category="policy">
+          <div class="news-card-image">
+            <svg class="news-icon-bg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+            <svg class="news-icon-main" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-top">
+              <span class="news-tag policy">政策解读</span>
+              <span class="news-date">2026-06-20</span>
+            </div>
+            <h3><a href="news-detail.html?id=3">2026年数电发票全面推行，企业开票流程将迎来哪些变化？</a></h3>
+            <p>国家税务总局持续推进数电发票改革，2026年底前将实现全国覆盖。企业需关注的五大变化及应对策略。</p>
+            <div class="news-card-footer">
+              <span>阅读 1.6k</span>
+              <a href="news-detail.html?id=3" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 4 -->
+        <div class="news-card fade-up" data-category="policy">
+          <div class="news-card-image">
+            <svg class="news-icon-bg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <svg class="news-icon-main" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-top">
+              <span class="news-tag policy">政策解读</span>
+              <span class="news-date">2026-06-15</span>
+            </div>
+            <h3><a href="news-detail.html?id=4">灵活用工税收优惠政策梳理：2026年企业必知的减负红利</a></h3>
+            <p>汇总2026年针对灵活用工平台及用工企业的最新税收优惠政策，涵盖增值税、企业所得税、个人所得税等多个维度。</p>
+            <div class="news-card-footer">
+              <span>阅读 2.1k</span>
+              <a href="news-detail.html?id=4" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 5 -->
+        <div class="news-card fade-up" data-category="industry">
+          <div class="news-card-image">
+            <svg class="news-icon-bg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <svg class="news-icon-main" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-top">
+              <span class="news-tag industry">行业资讯</span>
+              <span class="news-date">2026-06-12</span>
+            </div>
+            <h3><a href="news-detail.html?id=5">AI赋能财税行业：从发票识别到智能申报的效率革命</a></h3>
+            <p>大模型技术正在重塑财税服务行业。从OCR发票识别到智能税务申报，AI正在让传统代账服务实现质的飞跃。</p>
+            <div class="news-card-footer">
+              <span>阅读 987</span>
+              <a href="news-detail.html?id=5" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 6 -->
+        <div class="news-card fade-up" data-category="industry">
+          <div class="news-card-image">
+            <svg class="news-icon-bg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+            <svg class="news-icon-main" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-top">
+              <span class="news-tag industry">行业资讯</span>
+              <span class="news-date">2026-06-08</span>
+            </div>
+            <h3><a href="news-detail.html?id=6">中小企业财税数字化转型趋势与路径分析</a></h3>
+            <p>在政策推动和技术成熟的双重驱动下，中小企业财税数字化正从"可选项"变为"必选项"。解读转型的三大关键路径。</p>
+            <div class="news-card-footer">
+              <span>阅读 1.2k</span>
+              <a href="news-detail.html?id=6" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 7 -->
+        <div class="news-card fade-up" data-category="industry">
+          <div class="news-card-image">
+            <svg class="news-icon-bg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <svg class="news-icon-main" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-top">
+              <span class="news-tag industry">行业资讯</span>
+              <span class="news-date">2026-06-03</span>
+            </div>
+            <h3><a href="news-detail.html?id=7">直播电商行业灵活用工实践分享</a></h3>
+            <p>直播电商行业从业者规模持续扩大，主播、运营、客服等岗位灵活用工需求旺盛，合规结算方案成刚需。</p>
+            <div class="news-card-footer">
+              <span>阅读 1.5k</span>
+              <a href="news-detail.html?id=7" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 8 -->
+        <div class="news-card fade-up" data-category="company">
+          <div class="news-card-image">
+            <svg class="news-icon-bg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 15a7 7 0 100-14 7 7 0 000 14z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+            <svg class="news-icon-main" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15a7 7 0 100-14 7 7 0 000 14z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></svg>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-top">
+              <span class="news-tag company">公司动态</span>
+              <span class="news-date">2026-07-01</span>
+            </div>
+            <h3><a href="news-detail.html?id=8">烽享财税官网全新改版上线，服务体验全面升级</a></h3>
+            <p>经过精心筹备，烽享财税全新官网正式上线。新版网站优化了信息架构，新增HiveMind AI产品展示，为企业客户带来更好的浏览体验。</p>
+            <div class="news-card-footer">
+              <span>阅读 356</span>
+              <a href="news-detail.html?id=8" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 9 -->
+        <div class="news-card fade-up" data-category="company">
+          <div class="news-card-image">
+            <svg class="news-icon-bg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <svg class="news-icon-main" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-top">
+              <span class="news-tag company">公司动态</span>
+              <span class="news-date">2026-06-18</span>
+            </div>
+            <h3><a href="news-detail.html?id=9">烽享财税新增三省税源地，灵活用工服务覆盖更广</a></h3>
+            <p>烽享财税近期与湖南、江西、广西三地产业园达成合作，新增5个税源地，灵活用工方案可覆盖更多区域。</p>
+            <div class="news-card-footer">
+              <span>阅读 423</span>
+              <a href="news-detail.html?id=9" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 10 -->
+        <div class="news-card fade-up" data-category="company">
+          <div class="news-card-image">
+            <svg class="news-icon-bg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg class="news-icon-main" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="news-card-body">
+            <div class="news-card-top">
+              <span class="news-tag company">公司动态</span>
+              <span class="news-date">2026-06-05</span>
+            </div>
+            <h3><a href="news-detail.html?id=10">烽享财税助力200+企业完成金税四期切换</a></h3>
+            <p>自金税四期试点以来，烽享财税已累计协助超过200家企业完成系统切换与合规自查，客户反馈零差错。</p>
+            <div class="news-card-footer">
+              <span>阅读 567</span>
+              <a href="news-detail.html?id=10" class="news-read">阅读全文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div class="news-empty" style="display:none;" id="newsEmpty">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p>该分类下暂无新闻</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>获取专属财税合规方案</h2>
+      <p>不确定如何应对政策变化？立即咨询烽享财税专家团队</p>
+      <a href="contact.html" class="btn-white">
+        免费咨询
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+          </a>
+          <p>广东烽享联动信息科技有限公司<br>广州烽享云科技信息有限公司<br>广州烽享企业服务有限公司<br>专注企业全生命周期一站式财税综合服务</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="微信" title="微信">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.046c.133 0 .241-.11.241-.245 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-2.036 2.84c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.97-.983zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.969-.983z"/></svg>
+              <div class="qr-tooltip"><img src="images/wechat.png" alt="微信二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信视频号" title="微信视频号">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <div class="qr-tooltip"><img src="images/shipinhao.png" alt="视频号二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="抖音" title="抖音">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              <div class="qr-tooltip"><img src="images/douyin.png" alt="抖音二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信公众号" title="微信公众号">
+              <img src="images/gzhlogo.png" alt="微信公众号" style="width:18px;height:18px;object-fit:contain;">
+              <div class="qr-tooltip"><img src="images/gzh.jpg" alt="公众号二维码"></div>
+            </a>
+          
+          </div>
+        </div>
+        <div class="footer-col"><h4>主营业务</h4><a href="services.html#flexible">灵活用工</a><a href="services.html#invoice">数电发票</a><a href="services.html#business">工商财税</a><a href="services.html#tax">税务咨询</a><a href="services.html#enterprise">企业服务</a></div>
+        <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
+        <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2023-2026 烽享财税 FengXiangTax. All Rights Reserved.</div>
+        <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2024339069号</a> | <img src="images/gonganlogo.png" alt="公安备案" style="height:14px;vertical-align:middle;margin-right:4px;"><a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener">粤公网安备44010602011937号</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // News filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      var filterTabs = document.querySelectorAll('.news-filter .filter-tab');
+      var newsCards = document.querySelectorAll('.news-card');
+      var emptyState = document.getElementById('newsEmpty');
+
+      filterTabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          filterTabs.forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          var filter = tab.getAttribute('data-filter');
+          var visibleCount = 0;
+
+          var featuredContainer = document.querySelector('.news-featured');
+          if (filter !== 'all') {
+            featuredContainer.classList.add('compact');
+          } else {
+            featuredContainer.classList.remove('compact');
+          }
+
+          newsCards.forEach(function(card) {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = '';
+              card.classList.add('visible');
+              visibleCount++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          emptyState.style.display = visibleCount === 0 ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

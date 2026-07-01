@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>行业详情 - 烽享财税</title>
+  <link rel="icon" href="images/biaoqianlogo.png">
+  <meta name="description" content="烽享财税行业详情，财税政策深度解读、行业前沿资讯、公司最新动态。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero {
+      padding-top: calc(var(--header-height) + 60px);
+      padding-bottom: 40px;
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #FFFFFF 100%);
+      text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+    .page-hero h1 .highlight { color: var(--primary); }
+    .page-hero p { font-size: 16px; color: var(--text-secondary); }
+
+    .breadcrumb {
+      padding: 16px 0;
+      font-size: 14px; color: var(--text-light);
+    }
+    .breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--primary); }
+    .breadcrumb .sep { margin: 0 8px; color: var(--text-light); }
+    .breadcrumb .current { color: var(--text-primary); font-weight: 500; }
+
+    .article-section { padding: 40px 0 80px; }
+    .article-container {
+      max-width: 800px; margin: 0 auto;
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 48px 60px;
+    }
+    .article-header { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border-color); }
+    .article-tag {
+      display: inline-block;
+      font-size: 12px; font-weight: 600;
+      padding: 3px 12px; border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .article-tag.policy { color: #E07800; background: #FFF3E0; }
+    .article-tag.industry { color: #1976D2; background: #E3F2FD; }
+    .article-tag.company { color: #388E3C; background: #E8F5E9; }
+    .article-header h1 { font-size: 28px; font-weight: 700; line-height: 1.5; margin-bottom: 16px; }
+    .article-meta { display: flex; gap: 20px; font-size: 14px; color: var(--text-light); }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+    .article-meta svg { width: 14px; height: 14px; }
+
+    .article-body { font-size: 16px; line-height: 1.9; color: var(--text-primary); }
+    .article-body h2 { font-size: 22px; font-weight: 700; margin: 32px 0 16px; color: var(--text-primary); }
+    .article-body h2 .highlight { color: var(--primary); }
+    .article-body h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: var(--text-primary); }
+    .article-body p { margin-bottom: 16px; color: var(--text-secondary); }
+    .article-body p.lead { font-size: 17px; color: var(--text-primary); font-weight: 500; }
+    .article-body ul, .article-body ol { margin-bottom: 16px; padding-left: 24px; }
+    .article-body li { margin-bottom: 8px; color: var(--text-secondary); }
+    .article-body strong { color: var(--text-primary); font-weight: 600; }
+    .article-body a { color: var(--primary); text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+
+    .article-back { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-color); }
+    .article-back a { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; text-decoration: none; }
+    .article-back a:hover { gap: 12px; }
+    .article-back a svg { transition: var(--transition); }
+
+    .article-loading { text-align: center; padding: 80px 0; color: var(--text-light); }
+
+    .article-cta {
+      margin-top: 40px; padding: 28px 32px;
+      background: var(--primary-bg); border-radius: var(--radius-md);
+    }
+    .article-cta h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .article-cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+
+    @media (max-width: 768px) {
+      .article-container { padding: 24px 20px; }
+      .article-header h1 { font-size: 22px; }
+      .article-body h2 { font-size: 20px; }
+      .article-body h3 { font-size: 16px; }
+      .page-hero h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我们</a>
+        <a href="services.html">主营业务</a>
+        <a href="cases.html">客户案例</a>
+        <a href="news.html" class="active">行业动态</a>
+        <a href="contact.html">联系我们</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:15217609018" class="btn-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          152-1760-9018
+        </a>
+        <a href="contact.html" class="btn-primary">免费咨询</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">首页</a><a href="about.html">关于我们</a><a href="services.html">主营业务</a><a href="cases.html">客户案例</a><a href="news.html" class="active">行业动态</a><a href="contact.html">联系我们</a>
+    <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a></div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><span class="highlight">行业详情</span></h1>
+      <p>深入了解财税政策动态与行业趋势</p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a><span class="sep">/</span><a href="news.html">行业动态</a><span class="sep">/</span><span class="current" id="articleBreadcrumb">行业详情</span>
+      </div>
+      <div class="article-container" id="articleContainer">
+        <div class="article-loading">加载中...</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>获取专属财税合规方案</h2>
+      <p>不确定如何应对政策变化？立即咨询烽享财税专家团队</p>
+      <a href="contact.html" class="btn-white">
+        免费咨询
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+          </a>
+          <p>广东烽享联动信息科技有限公司<br>广州烽享云科技信息有限公司<br>广州烽享企业服务有限公司<br>专注企业全生命周期一站式财税综合服务</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="微信" title="微信">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.046c.133 0 .241-.11.241-.245 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-2.036 2.84c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.97-.983zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.969-.983z"/></svg>
+              <div class="qr-tooltip"><img src="images/wechat.png" alt="微信二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信视频号" title="微信视频号">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <div class="qr-tooltip"><img src="images/shipinhao.png" alt="视频号二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="抖音" title="抖音">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              <div class="qr-tooltip"><img src="images/douyin.png" alt="抖音二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信公众号" title="微信公众号">
+              <img src="images/gzhlogo.png" alt="微信公众号" style="width:18px;height:18px;object-fit:contain;">
+              <div class="qr-tooltip"><img src="images/gzh.jpg" alt="公众号二维码"></div>
+            </a>
+          
+          </div>
+        </div>
+        <div class="footer-col"><h4>主营业务</h4><a href="services.html#flexible">灵活用工</a><a href="services.html#invoice">数电发票</a><a href="services.html#business">工商财税</a><a href="services.html#tax">税务咨询</a><a href="services.html#enterprise">企业服务</a></div>
+        <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
+        <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2023-2026 烽享财税 FengXiangTax. All Rights Reserved.</div>
+        <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2024339069号</a> | <img src="images/gonganlogo.png" alt="公安备案" style="height:14px;vertical-align:middle;margin-right:4px;"><a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener">粤公网安备44010602011937号</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var articles = [
+        {
+          id: 1, title: "金税四期全面推开，企业该如何做好税务合规准备？",
+          category: "policy", date: "2026-06-28", views: "2.3k",
+          body: [
+            '<p class="lead">随着金税四期系统在全国范围内逐步上线，企业面临的税务监管环境发生深刻变化。本文从发票管理、申报流程、风险排查三个维度，为企业提供可落地的合规方案。</p>',
+            '<h2>一、金税四期带来的<span class="highlight">核心变化</span></h2>',
+            '<p>金税四期相比三期，最大的变化是从"以票控税"向"以数治税"转型。税务局将通过大数据、云计算等技术手段，实现对纳税人全方位的税务监管。具体表现为：</p>',
+            '<ul><li><strong>全电子发票全面推广：</strong>所有发票信息都将纳入税务系统，实现发票全生命周期管理。</li><li><strong>多部门数据打通：</strong>税务、银行、工商、海关等部门数据实现共享，企业资金流、物流、信息流全面透明。</li><li><strong>智能风险预警：</strong>系统自动识别异常交易、虚开发票等风险行为，实现精准打击。</li></ul>',
+            '<h2>二、发票管理的合规要点</h2>',
+            '<p>发票管理是金税四期监管的核心。企业需要建立完善的发票管理制度：</p>',
+            '<ol><li>所有发票必须通过电子发票服务平台开具，确保发票信息真实、完整。</li><li>建立发票审核机制，对异常发票（如品名与经营范围不符、金额异常等）进行重点审查。</li><li>定期进行发票自查，确保进销项匹配、发票流与资金流一致。</li><li>妥善保管发票相关凭证，包括合同、物流单据、银行流水等，以备税务稽查。</li></ol>',
+            '<h2>三、申报流程的优化建议</h2>',
+            '<p>在金税四期环境下，纳税申报的准确性和及时性至关重要。企业应当：</p>',
+            '<ul><li>按时完成纳税申报，避免逾期申报带来的信用扣分。</li><li>确保申报数据与财务账簿、银行流水一致，数据差异将成为税务关注的重点。</li><li>充分利用电子税务局的功能，实现申报流程的自动化和智能化。</li><li>关注税务政策动态，及时调整申报策略。</li></ul>',
+            '<h2>四、烽享财税的合规服务</h2>',
+            '<p>烽享财税已协助超过200家企业完成金税四期切换，提供一站式税务合规解决方案：</p>',
+            '<ul><li>税务健康体检：全面排查企业税务风险点，出具专业诊断报告。</li><li>合规方案设计：根据企业实际情况，量身定制税务合规方案。</li><li>系统切换支持：协助企业完成电子发票系统对接和申报流程优化。</li><li>持续跟踪服务：提供税务政策解读和日常咨询，确保企业长期合规。</li></ul>',
+            '<div class="article-cta"><h3>需要金税四期合规方案？</h3><p>烽享财税专业团队为您一对一诊断，提供可落地的合规方案。</p><a href="contact.html" class="btn-primary">免费咨询</a></div>'
+          ]
+        },
+        {
+          id: 2, title: "2026灵活用工市场规模突破1.5万亿，合规化成核心竞争力",
+          category: "industry", date: "2026-06-25", views: "1.8k",
+          body: [
+            '<p class="lead">艾瑞咨询最新报告显示，中国灵活用工市场2026年规模预计突破1.5万亿元。在监管趋严的背景下，合规化服务能力成为平台竞争的核心壁垒。</p>',
+            '<h2>一、灵活用工市场<span class="highlight">高速增长</span>背后的驱动力</h2>',
+            '<p>灵活用工市场的爆发式增长，源于多重因素的叠加：</p>',
+            '<ul><li><strong>新经济形态崛起：</strong>直播电商、共享出行、在线教育、即时配送等新业态快速发展，创造了大量灵活用工需求。</li><li><strong>企业降本增效诉求：</strong>面对不确定的市场环境，越来越多企业选择灵活用工模式来降低人力成本。</li><li><strong>政策红利释放：</strong>国家鼓励灵活就业，多地出台支持灵活用工发展的政策措施。</li><li><strong>技术进步赋能：</strong>数字化平台降低了灵活用工的匹配成本，提升了服务效率。</li></ul>',
+            '<h2>二、合规化成为行业发展的关键变量</h2>',
+            '<p>随着灵活用工市场的快速发展，监管也在同步加强。2025年以来，多部门联合开展灵活用工领域专项整治，重点打击虚假用工、虚开发票、违规代扣代缴等行为。</p>',
+            '<p>对于灵活用工平台而言，合规能力不再是"加分项"，而是"及格线"。具备以下能力的企业将在竞争中脱颖而出：</p>',
+            '<ol><li>真实业务场景匹配能力——确保每一笔用工都有真实业务支撑。</li><li>合规结算体系——依法代扣代缴个人所得税、增值税等税费。</li><li>多税地解决方案——根据业务实际发生地选择合规的税源地进行结算。</li><li>风控管理能力——建立完善的反洗钱、反欺诈机制。</li></ol>',
+            '<h2>三、烽享财税的灵活用工方案</h2>',
+            '<p>烽享财税深耕灵活用工领域多年，提供以下核心服务：</p>',
+            '<ul><li>多税地灵活用工平台对接，覆盖全国多个合规税源地。</li><li>全流程电子化管理，从合同签署到结算发放一站式完成。</li><li>合规方案定制，根据企业行业特点和业务场景提供个性化解决方案。</li><li>持续政策跟踪，确保方案始终符合最新监管要求。</li></ul>'
+          ]
+        },
+        {
+          id: 3, title: "2026年数电发票全面推行，企业开票流程将迎来哪些变化？",
+          category: "policy", date: "2026-06-20", views: "1.6k",
+          body: [
+            '<p class="lead">国家税务总局持续推进数电发票改革，2026年底前将实现全国覆盖。企业需关注的五大变化及应对策略。</p>',
+            '<h2>一、数电发票的<span class="highlight">五大核心变化</span></h2>',
+            '<p>数电发票的推行，不仅是发票形式的变革，更是一场深刻的财税管理革命。企业需要重点关注以下五个方面的变化：</p>',
+            '<h3>1. 发票领用取消</h3>',
+            '<p>企业不再需要向税务局申领纸质发票，数电发票由系统自动分配，企业只需在电子发票服务平台按需开具。这一变化大幅降低了发票管理成本，但也对企业的开票管理提出了更高要求。</p>',
+            '<h3>2. 发票开具去介质化</h3>',
+            '<p>不再需要税控设备（如税控盘、金税盘等），企业可以通过电子税务局或第三方服务平台直接开具发票。这降低了企业的硬件成本，但也要求企业加强网络和数据安全管理。</p>',
+            '<h3>3. 发票信息全电子化</h3>',
+            '<p>数电发票的所有信息（包括票面信息、购买方、销售方、商品明细等）都以电子数据形式存储，税务局可以实时获取和分析这些数据。这意味着企业的开票行为将更加透明。</p>',
+            '<h3>4. 发票报销归档电子化</h3>',
+            '<p>数电发票的电子报销、归档、保存成为主流。企业需要建立电子发票的全生命周期管理流程，包括接收、查验、报销、归档等环节。</p>',
+            '<h3>5. 税务风险实时预警</h3>',
+            '<p>税务局可以基于数电发票的实时数据，对企业的税务风险进行动态评估。异常开票行为（如频繁开具大额发票、发票品名与经营范围不符等）将被系统自动识别。</p>',
+            '<h2>二、企业的应对策略</h2>',
+            '<p>面对数电发票改革，企业应当从以下方面着手准备：</p>',
+            '<ol><li>升级财务系统，确保与电子发票服务平台无缝对接。</li><li>优化发票管理流程，建立电子发票的自动化处理机制。</li><li>加强员工培训，让财务、采购、销售等部门熟悉数电发票的操作流程。</li><li>建立发票风险监控机制，定期对开票数据进行分析，及时发现异常情况。</li></ol>'
+          ]
+        },
+        {
+          id: 4, title: "灵活用工税收优惠政策梳理：2026年企业必知的减负红利",
+          category: "policy", date: "2026-06-15", views: "2.1k",
+          body: [
+            '<p class="lead">汇总2026年针对灵活用工平台及用工企业的最新税收优惠政策，涵盖增值税、企业所得税、个人所得税等多个维度。</p>',
+            '<h2>一、灵活用工<span class="highlight">增值税</span>优惠政策</h2>',
+            '<p>2026年，国家对灵活用工领域的增值税优惠政策继续延续，主要体现在以下几个方面：</p>',
+            '<ul><li><strong>小规模纳税人减免：</strong>月销售额不超过10万元（季度不超过30万元）的灵活用工平台，可享受免征增值税政策。</li><li><strong>差额征税政策：</strong>人力资源外包服务可以选择适用差额征税，以取得的全部价款和价外费用，扣除代用工单位支付给灵活就业人员的工资后的余额为销售额。</li><li><strong>进项税额抵扣：</strong>企业使用灵活用工服务取得的合规发票，可按规定抵扣进项税额。</li></ul>',
+            '<h2>二、灵活用工企业所得税优惠</h2>',
+            '<p>企业使用灵活用工模式，在企业所得税方面也有相应的优惠政策：</p>',
+            '<ul><li>灵活用工人员的薪酬支出，符合规定的可在企业所得税税前扣除。</li><li>对于高新技术企业，灵活用工研发人员的薪酬可享受加计扣除优惠。</li><li>企业支付给灵活用工平台的服务费，取得合规发票的可据实扣除。</li></ul>',
+            '<h2>三、灵活用工个人所得税政策</h2>',
+            '<p>灵活用工人员的个人所得税处理，是灵活用工的核心。根据现行政策：</p>',
+            '<ul><li>灵活用工人员按照"经营所得"或"劳务报酬所得"缴纳个人所得税，具体取决于用工模式的性质。</li><li>符合条件的灵活用工人员可以享受核定征收政策，税负相对较低。</li><li>多地出台的园区优惠政策，为灵活用工人员提供额外的税收减免。</li></ul>',
+            '<p>烽享财税提醒：灵活用工税收优惠政策的适用有严格的条件限制，企业应当在专业税务顾问的指导下合理利用这些政策，避免违规风险。</p>'
+          ]
+        },
+        {
+          id: 5, title: "AI赋能财税行业：从发票识别到智能申报的效率革命",
+          category: "industry", date: "2026-06-12", views: "987",
+          body: [
+            '<p class="lead">大模型技术正在重塑财税服务行业。从OCR发票识别到智能税务申报，AI正在让传统代账服务实现质的飞跃。</p>',
+            '<h2>一、AI在财税领域的<span class="highlight">应用场景</span></h2>',
+            '<p>人工智能技术在财税行业的应用日益广泛，以下是当前最成熟的几个场景：</p>',
+            '<h3>1. 智能发票识别</h3>',
+            '<p>基于OCR和深度学习技术，AI可以自动识别各类发票的票面信息，准确率达到99%以上。相比传统的人工录入，效率提升了数十倍。烽享财税的智能发票系统已实现多语种发票识别、自动验真、智能分类等功能。</p>',
+            '<h3>2. 智能记账与凭证生成</h3>',
+            '<p>AI可以根据发票信息和银行流水，自动生成会计凭证，并自动匹配会计科目。这一技术让代理记账的效率提升超过50%，同时大幅降低了人工错误率。</p>',
+            '<h3>3. 智能税务申报</h3>',
+            '<p>AI可以根据企业的财务数据，自动计算各类税费，并生成纳税申报表。对于常规税种（如增值税、企业所得税等），申报准确率已达99%以上。</p>',
+            '<h3>4. 税务风险预警</h3>',
+            '<p>基于大数据和机器学习，AI可以对企业的税务风险进行实时评估，提前识别异常指标，帮助企业及时整改。</p>',
+            '<h2>二、AI对财税行业的深远影响</h2>',
+            '<p>AI技术的广泛应用，正在从根本上改变财税服务的模式：</p>',
+            '<ul><li>传统代账服务正向"智能财税管家"转型，服务深度和价值显著提升。</li><li>税务咨询更加精准化，AI可以提供政策匹配、合规建议等个性化服务。</li><li>企业财税管理实现自动化，财务人员从繁琐的重复工作中解放出来。</li><li>行业门槛降低，中小企业也能享受到高质量的财税服务。</li></ul>'
+          ]
+        },
+        {
+          id: 6, title: "中小企业财税数字化转型趋势与路径分析",
+          category: "industry", date: "2026-06-08", views: "1.2k",
+          body: [
+            '<p class="lead">在政策推动和技术成熟的双重驱动下，中小企业财税数字化正从"可选项"变为"必选项"。解读转型的三大关键路径。</p>',
+            '<h2>一、财税数字化转型的<span class="highlight">时代背景</span></h2>',
+            '<p>2026年，中小企业财税数字化转型已不再是选择题，而是必答题。这背后有三大驱动力：</p>',
+            '<ul><li><strong>政策强制推动：</strong>金税四期、数电发票等政策的全面落地，要求企业必须实现财税数据的电子化、自动化。</li><li><strong>市场竞争压力：</strong>数字化程度高的企业，在财税成本控制、资金效率、决策速度等方面具有显著优势。</li><li><strong>技术成本降低：</strong>云计算、SaaS等技术的普及，让中小企业也能以较低成本享受到数字化财税服务。</li></ul>',
+            '<h2>二、中小企业财税数字化的三大路径</h2>',
+            '<h3>路径一：业务单据电子化</h3>',
+            '<p>这是财税数字化的基础。企业需要将所有的发票、合同、报销单据等实现电子化，建立统一的数字档案。烽享财税提供的数电发票解决方案，可以一站式解决企业的发票电子化问题。</p>',
+            '<h3>路径二：财务流程自动化</h3>',
+            '<p>在单据电子化的基础上，实现记账、对账、报税、报表生成等流程的自动化。这可以大幅降低财务人员的工作量，同时提升数据准确性。</p>',
+            '<h3>路径三：数据分析智能化</h3>',
+            '<p>这是财税数字化的最高阶段。通过对财务数据的深度分析，为企业的经营决策提供数据支持。例如：现金流预测、税负优化建议、成本结构分析等。</p>',
+            '<h2>三、烽享财税的数字化服务方案</h2>',
+            '<p>烽享财税为中小企业提供端到端的财税数字化服务：</p>',
+            '<ul><li>电子发票全生命周期管理，从开具到归档一站式完成。</li><li>智能记账系统，支持多维度财务数据分析。</li><li>税务申报自动化，确保申报准确、及时。</li><li>企业财税健康仪表盘，实时掌握企业经营状况。</li></ul>'
+          ]
+        },
+        {
+          id: 7, title: "直播电商行业灵活用工实践分享",
+          category: "industry", date: "2026-06-03", views: "1.5k",
+          body: [
+            '<p class="lead">直播电商行业从业者规模持续扩大，主播、运营、客服等岗位灵活用工需求旺盛，合规结算方案成刚需。</p>',
+            '<h2>一、直播电商行业的灵活用工<span class="highlight">现状</span></h2>',
+            '<p>据统计，2026年中国直播电商行业从业者规模已突破5000万人，其中灵活用工人员占比超过60%。直播电商行业灵活用工的主要特点包括：</p>',
+            '<ul><li><strong>人员流动频繁：</strong>主播、助播等核心岗位人员流动性高，传统的劳动关系难以适应。</li><li><strong>收入模式多样：</strong>底薪+提成、纯佣金、坑位费+佣金等多种收入模式并存。</li><li><strong>地域分布广泛：</strong>直播电商从业者遍布全国各地，跨区域结算需求旺盛。</li><li><strong>结算周期灵活：</strong>从日结到月结，不同平台、不同岗位的结算周期差异大。</li></ul>',
+            '<h2>二、直播电商行业灵活用工的核心痛点</h2>',
+            '<p>尽管灵活用工为直播电商行业带来了灵活性，但也面临不少合规挑战：</p>',
+            '<ul><li>主播收入的个人所得税处理复杂，劳务报酬和经营所得的区分容易引起税务争议。</li><li>MCN机构与主播之间的法律关系界定模糊，容易产生劳动纠纷。</li><li>佣金结算涉及增值税、个人所得税等多个税种，合规成本高。</li><li>多地经营的MCN机构需要处理不同地区的税务政策差异。</li></ul>',
+            '<h2>三、烽享财税的直播电商灵活用工方案</h2>',
+            '<p>针对直播电商行业的特点，烽享财税提供定制化的灵活用工方案：</p>',
+            '<ul><li>根据主播收入模式，设计最优的税务结算方案，合理降低税负。</li><li>建立MCN机构与主播之间的合规合作协议体系，规避劳动纠纷风险。</li><li>提供多税地结算方案，支持全国范围内的灵活用工结算。</li><li>全流程电子化管理，从合同签署到结算发放一站式完成。</li></ul>'
+          ]
+        },
+        {
+          id: 8, title: "烽享财税官网全新改版上线，服务体验全面升级",
+          category: "company", date: "2026-07-01", views: "356",
+          body: [
+            '<p class="lead">经过精心筹备，烽享财税全新官网正式上线。新版网站优化了信息架构，新增HiveMind AI产品展示，为企业客户带来更好的浏览体验。</p>',
+            '<h2>一、全新官网的<span class="highlight">升级亮点</span></h2>',
+            '<p>此次官网改版，是烽享财税数字化服务升级的重要一步。新版官网在以下几个方面实现了显著提升：</p>',
+            '<h3>1. 信息架构优化</h3>',
+            '<p>新版官网重新梳理了信息架构，将服务内容按照企业生命周期进行归类，让客户可以更快地找到所需的服务。首页采用模块化设计，核心服务、客户案例、企业优势等一目了然。</p>',
+            '<h3>2. 响应式设计升级</h3>',
+            '<p>新版官网采用最新的响应式设计技术，确保在PC、平板、手机等各种设备上都能获得一致的浏览体验。移动端体验优化，让客户可以随时随地了解烽享财税的服务。</p>',
+            '<h3>3. 交互体验提升</h3>',
+            '<p>新增在线留言、即时咨询等功能，客户可以更便捷地与烽享财税的专业团队取得联系。同时优化了页面加载速度，确保用户访问流畅。</p>',
+            '<h3>4. HiveMind AI产品展示</h3>',
+            '<p>新版官网新增了HiveMind AI产品专区，展示了烽享财税在AI财税领域的技术创新。包括智能发票识别、智能记账、智能税务申报等功能，让客户直观感受AI技术带来的效率提升。</p>',
+            '<h2>二、持续迭代，服务客户</h2>',
+            '<p>烽享财税将持续优化官网功能，计划在未来推出以下升级：</p>',
+            '<ul><li>在线服务门户：客户可以在线查看服务进度、下载财务报表、提交服务需求。</li><li>财税知识库：汇集最新的财税政策、行业动态、操作指南，成为企业财税管理的参考工具。</li><li>智能客服系统：基于AI技术的智能客服，为客户提供7x24小时的在线咨询服务。</li></ul>',
+            '<p>烽享财税始终坚持以客户为中心，通过技术创新和数字化转型，为客户提供更优质、更高效的财税服务。</p>'
+          ]
+        },
+        {
+          id: 9, title: "烽享财税新增三省税源地，灵活用工服务覆盖更广",
+          category: "company", date: "2026-06-18", views: "423",
+          body: [
+            '<p class="lead">烽享财税近期与湖南、江西、广西三地产业园达成合作，新增5个税源地，灵活用工方案可覆盖更多区域。</p>',
+            '<h2>一、新增税源地的<span class="highlight">战略布局</span></h2>',
+            '<p>此次新增税源地，是烽享财税全国布局的重要一步。新增税源地的选择，综合考虑了以下因素：</p>',
+            '<ul><li><strong>政策合规性：</strong>所有税源地均经过严格筛选，确保符合国家税务总局的相关规定。</li><li><strong>税收优惠力度：</strong>各税源地提供具有竞争力的税收优惠政策，帮助企业合理降低税负。</li><li><strong>产业匹配度：</strong>税源地的产业定位与烽享财税的服务客户群体高度匹配。</li><li><strong>服务体系完善：</strong>各税源地均具备完善的服务配套，确保企业用工结算的顺畅。</li></ul>',
+            '<h2>二、新增税源地的具体情况</h2>',
+            '<p>新增税源地主要分布在以下区域：</p>',
+            '<ul><li><strong>湖南：</strong>新增2个税源地，重点服务长株潭地区的科技、文创类企业。</li><li><strong>江西：</strong>新增2个税源地，重点服务赣江新区的物流、制造类企业。</li><li><strong>广西：</strong>新增1个税源地，重点服务面向东盟的跨境电商、贸易类企业。</li></ul>',
+            '<h2>三、灵活用工服务持续升级</h2>',
+            '<p>烽享财税的灵活用工服务，已覆盖包括广东、湖南、江西、广西、湖北、浙江、江苏等7个省份。通过多税地布局，可以为客户提供：</p>',
+            '<ul><li>根据企业实际业务发生地，选择最优税源地。</li><li>灵活应对不同地区的税务政策变化。</li><li>降低企业税务风险，确保合规经营。</li><li>专业的政策解读和方案优化服务。</li></ul>'
+          ]
+        },
+        {
+          id: 10, title: "烽享财税助力200+企业完成金税四期切换",
+          category: "company", date: "2026-06-05", views: "567",
+          body: [
+            '<p class="lead">自金税四期试点以来，烽享财税已累计协助超过200家企业完成系统切换与合规自查，客户反馈零差错。</p>',
+            '<h2>一、金税四期切换的<span class="highlight">服务成果</span></h2>',
+            '<p>自金税四期在全国试点以来，烽享财税成立了专门的金税四期服务团队，为企业客户提供系统切换、合规自查、流程优化等一站式服务。截至目前：</p>',
+            '<ul><li>累计服务客户超过200家，涵盖物流、电商、科技、制造等多个行业。</li><li>协助客户完成电子发票系统对接，日均开票量超过10000张。</li><li>为客户排查税务风险点，平均每家客户发现3-5个风险点并完成整改。</li><li>客户满意度达到100%，零投诉、零差错。</li></ul>',
+            '<h2>二、典型服务案例</h2>',
+            '<p>以下是部分具有代表性的服务案例：</p>',
+            '<h3>案例一：某连锁零售企业</h3>',
+            '<p>该企业拥有300+门店，月开票量超过20000张。烽享财税协助其在2个月内完成数电发票系统切换，建立了自动化的开票和报销流程，财务效率提升60%。</p>',
+            '<h3>案例二：某互联网科技公司</h3>',
+            '<p>该公司拥有大量外包技术人员，发票管理和税务申报复杂。烽享财税为其设计了定制化的税务合规方案，年度节税超过80万元。</p>',
+            '<h3>案例三：某制造集团</h3>',
+            '<p>该集团下属10多家子公司，税务管理分散。烽享财税协助其建立了集团统一的税务管理平台，实现了税务数据的集中管理和风险统一监控。</p>',
+            '<h2>三、持续助力企业合规</h2>',
+            '<p>烽享财税将继续深化金税四期服务，为更多企业提供专业的合规解决方案。如果您尚未完成金税四期切换，欢迎联系烽享财税专业团队。</p>'
+          ]
+        }
+      ];
+
+      var params = new URLSearchParams(window.location.search);
+      var id = parseInt(params.get('id') || '1', 10);
+      var article = articles.find(function(a) { return a.id === id; }) || articles[0];
+      var container = document.getElementById('articleContainer');
+      var breadcrumb = document.getElementById('articleBreadcrumb');
+
+      if (breadcrumb) breadcrumb.textContent = article.title;
+      document.title = article.title + ' - 烽享财税';
+
+      var tagName = article.category === 'policy' ? '政策解读' : article.category === 'industry' ? '行业资讯' : '公司动态';
+      var html = '<div class="article-header">' +
+        '<span class="article-tag ' + article.category + '">' + tagName + '</span>' +
+        '<h1>' + article.title + '</h1>' +
+        '<div class="article-meta">' +
+        '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' + article.date + '</span>' +
+        '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>阅读 ' + article.views + '</span>' +
+        '</div></div>' +
+        '<div class="article-body">' + article.body.join('') + '</div>' +
+        '<div class="article-back">' +
+        '<a href="news.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>返回行业动态</a>' +
+        '</div>';
+      container.innerHTML = html;
+    })();
+  </script>
+</body>
+</html>

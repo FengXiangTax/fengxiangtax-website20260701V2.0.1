@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 - 烽享财税</title>
+  <link rel="icon" href="images/biaoqianlogo.png">
+  <meta name="description" content="烽享财税是一家专注财税一站式服务的互联网财税科技公司，秉承分享、专注、审慎的企业价值观。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero {
+      padding-top: calc(var(--header-height) + 60px);
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #FFFFFF 100%);
+      text-align: center;
+    }
+    .page-hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+    .page-hero h1 .highlight { color: var(--primary); }
+    .page-hero p { font-size: 16px; color: var(--text-secondary); }
+    .about-intro { padding: 80px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-text h2 { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
+    .about-text h2 .highlight { color: var(--primary); }
+    .about-text p { font-size: 15px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 16px; }
+    .about-visual { position: relative; }
+    .about-hex-wrap {
+      width: 100%; max-width: 420px; margin: 0 auto; aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-hex-wrap svg { width: 100%; height: 100%; }
+    .values-section { padding: 80px 0; background: var(--bg-light); }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .value-card {
+      text-align: center; padding: 40px 28px; background: var(--bg-white);
+      border-radius: var(--radius-md); transition: var(--transition);
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .value-icon {
+      width: 64px; height: 64px; margin: 0 auto 20px;
+      background: var(--primary); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #FFFFFF;
+    }
+    .value-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    .value-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+    .timeline-section { padding: 80px 0; }
+    .timeline { max-width: 700px; margin: 0 auto; position: relative; padding-left: 40px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 15px; top: 0; bottom: 0;
+      width: 2px; background: var(--border-color);
+    }
+    .timeline-item { position: relative; padding-bottom: 40px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -32px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--primary); border: 3px solid var(--primary-bg);
+    }
+    .timeline-item .year { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .timeline-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .timeline-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 28px; }
+      .about-text h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="about.html" class="active">关于我们</a>
+        <a href="services.html">主营业务</a>
+        <a href="cases.html">客户案例</a>
+        <a href="news.html">行业动态</a>
+        <a href="contact.html">联系我们</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:15217609018" class="btn-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          152-1760-9018
+        </a>
+        <a href="contact.html" class="btn-primary">免费咨询</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">首页</a><a href="about.html" class="active">关于我们</a><a href="services.html">主营业务</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a><a href="contact.html">联系我们</a>
+    <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a></div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><span class="highlight">关于烽享财税</span></h1>
+      <p>专注财税一站式服务的互联网财税科技公司</p>
+    </div>
+  </section>
+
+  <section class="about-intro">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text fade-up">
+          <h2>让企业财税<span class="highlight">更简单</span></h2>
+          <p>烽享财税是一家专注财税一站式服务的互联网财税科技公司，主要为企业提供：灵活用工、数电发票、工商财税服务（公司注册、代理记账、商标注册、软著申请）、企业服务（网站建设、小程序搭建）、税务合规计划、税务咨询等财税综合服务。</p>
+          <p>广东烽享联动信息科技有限公司自成立以来，秉承"分享、专注、审慎"的企业价值观，致力于为企业提供合规经营解决方案；专注于企业全生命周期的一站式财税综合服务；依据现有税务政策和规定，依法纳税，审慎发展，帮助企业合规经营，降本增效。</p>
+          <a href="contact.html" class="btn-primary" style="margin-top:16px;">联系我们</a>
+        </div>
+        <div class="about-visual fade-up">
+          <div class="about-hex-wrap">
+            <svg viewBox="0 0 400 400" fill="none">
+              <path d="M200 60L320 130V270L200 340L80 270V130L200 60Z" fill="#FF8C00" opacity="0.06" stroke="#FF8C00" stroke-width="2"/>
+              <path d="M200 100L280 146V238L200 284L120 238V146L200 100Z" fill="#FF8C00" opacity="0.08" stroke="#FF8C00" stroke-width="1.5"/>
+              <path d="M200 140L240 164V212L200 236L160 212V164L200 140Z" fill="#FF8C00" opacity="0.12" stroke="#FF8C00" stroke-width="1"/>
+              <circle cx="200" cy="188" r="20" fill="#FF8C00"/>
+              <line x1="186" y1="183" x2="214" y2="183" stroke="white" stroke-width="1.5"/>
+              <line x1="186" y1="188" x2="214" y2="188" stroke="white" stroke-width="1.5"/>
+              <line x1="186" y1="193" x2="214" y2="193" stroke="white" stroke-width="1.5"/>
+              <ellipse cx="186" cy="176" rx="6" ry="10" fill="white" opacity="0.25" transform="rotate(-15 186 176)"/>
+              <ellipse cx="214" cy="176" rx="6" ry="10" fill="white" opacity="0.25" transform="rotate(15 214 176)"/>
+              <path d="M196 168C196 168 198 160 200 160C202 160 204 168 204 168" stroke="#FF8C00" stroke-width="1.5"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="eyebrow">企业价值观</div>
+        <h2>分享 · 专注 · <span class="highlight">审慎</span></h2>
+        <p>我们坚守的核心信念，驱动每一次服务</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card fade-up">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+          <h3>分享</h3>
+          <p>分享财税智慧，分享合规经验，与客户共同成长，构建有温度的商业圈层</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>专注</h3>
+          <p>深耕财税行业十余年，专注企业全生命周期一站式财税综合服务</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>审慎</h3>
+          <p>依据现有税务政策和规定，依法纳税，审慎发展，确保每一笔业务合法合规</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="eyebrow">发展历程</div>
+        <h2>一路<span class="highlight">走来</span></h2>
+      </div>
+      <div class="timeline fade-up">
+        <div class="timeline-item">
+          <div class="year">2023</div>
+          <h4>公司成立</h4>
+          <p>广东烽享联动信息科技有限公司在广州市天河区成立，开启财税服务新征程</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2024</div>
+          <h4>核心业务落地</h4>
+          <p>全面落地灵活用工和数电发票两大核心业务，服务企业快速增长，获得市场广泛认可</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2025</div>
+          <h4>数字化转型全面升级</h4>
+          <p>全面升级数字化服务体系，引入AI技术赋能财税服务，实现智能开票、智能记账、智能风控等场景应用</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2026</div>
+          <h4>企业全生命周期定位</h4>
+          <p>确立企业全生命周期财税综合服务定位，打造一站式企业财税综合服务平台</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>与烽享财税一起，走得更远</h2>
+      <p>立足广州，专注企业全生命周期财税及数字化服务</p>
+      <a href="contact.html" class="btn-white">
+        开始合作
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo"><img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;"></a>
+          <p>广东烽享联动信息科技有限公司<br>广州烽享云科技信息有限公司<br>广州烽享企业服务有限公司<br>专注企业全生命周期一站式财税综合服务</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="微信" title="微信">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.046c.133 0 .241-.11.241-.245 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-2.036 2.84c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.97-.983zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.969-.983z"/></svg>
+              <div class="qr-tooltip"><img src="images/wechat.png" alt="微信二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信视频号" title="微信视频号">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <div class="qr-tooltip"><img src="images/shipinhao.png" alt="视频号二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="抖音" title="抖音">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              <div class="qr-tooltip"><img src="images/douyin.png" alt="抖音二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信公众号" title="微信公众号">
+              <img src="images/gzhlogo.png" alt="微信公众号" style="width:18px;height:18px;object-fit:contain;">
+              <div class="qr-tooltip"><img src="images/gzh.jpg" alt="公众号二维码"></div>
+            </a>
+          
+          </div>
+        </div>
+        <div class="footer-col"><h4>主营业务</h4><a href="services.html#flexible">灵活用工</a><a href="services.html#invoice">数电发票</a><a href="services.html#business">工商财税</a><a href="services.html#tax">税务咨询</a><a href="services.html#enterprise">企业服务</a></div>
+        <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
+        <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2023-2026 烽享财税 FengXiangTax. All Rights Reserved.</div>
+        <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2024339069号</a> | <img src="images/gonganlogo.png" alt="公安备案" style="height:14px;vertical-align:middle;margin-right:4px;"><a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener">粤公网安备44010602011937号</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
