@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常见问题FAQ - 烽享财税，您身边的财税专家</title>
+  <link rel="icon" href="images/biaoqianlogo.png">
+  <meta name="description" content="烽享财税常见问答：灵活用工风险与合规、数电发票怎么开、公司注册需要什么材料、税务合规怎么做、小程序开发、网站搭建、餐饮数字化、GEO推广，我们为您解答各类财税疑难问题。">
+  <meta name="keywords" content="财税常见问题,灵活用工,数电发票,公司注册,财税合规,金税四期,代理记账,小程序开发,网站搭建,餐饮数字化,GEO推广,关于烽享">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* --- FAQ Page Styles --- */
+    .page-hero {
+      padding-top: calc(var(--header-height) + 60px);
+      padding-bottom: 60px;
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #FFFFFF 50%, var(--primary-bg) 100%);
+      text-align: center;
+      position: relative;
+    }
+    
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,140,0,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .page-hero h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero h1 .highlight {
+      color: var(--primary);
+      position: relative;
+    }
+
+    .page-hero p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 搜索框 */
+    .faq-search-wrapper {
+      max-width: 600px;
+      margin: 0 auto 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-search {
+      width: 100%;
+      padding: 16px 24px;
+      padding-right: 60px;
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 16px;
+      font-family: inherit;
+      transition: var(--transition);
+      background: var(--bg-white);
+    }
+
+    .faq-search:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(255,140,0,0.1);
+    }
+
+    .faq-search::placeholder {
+      color: var(--text-light);
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      pointer-events: none;
+    }
+
+    /* 分类标签 */
+    .faq-categories {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .category-btn {
+      padding: 10px 20px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background: var(--bg-white);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .category-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .category-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white, #FFFFFF);
+    }
+
+    /* FAQ容器 */
+    .faq-container {
+      padding: 0 0 80px;
+    }
+
+    /* FAQ分组 */
+    .faq-group {
+      margin-bottom: 48px;
+    }
+
+    .faq-group-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .faq-group-title svg {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* 单个问题卡片 */
+    .faq-item {
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      background: var(--bg-white);
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: inherit;
+      text-align: left;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      color: var(--primary);
+      background: var(--primary-bg);
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--primary);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 1000px;
+    }
+
+    /* 推荐卡片 */
+    .faq-cta-card {
+      background: linear-gradient(135deg, var(--primary-bg) 0%, #FFFFFF 100%);
+      border: 2px solid var(--primary-light);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .faq-cta-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .faq-cta-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    /* 隐藏类 */
+    .faq-item.hidden {
+      display: none;
+    }
+
+    /* 响应式 */
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 28px;
+      }
+
+      .faq-search {
+        font-size: 14px;
+        padding: 14px 20px;
+        padding-right: 50px;
+      }
+
+      .faq-question {
+        font-size: 15px;
+        padding: 16px 20px;
+      }
+
+      .faq-answer-inner {
+        font-size: 14px;
+        padding: 0 20px 16px;
+      }
+
+      .faq-group-title {
+        font-size: 18px;
+      }
+
+      .category-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+      }
+    }
+  </style>
+  <script src="js/tracking.js"></script>
+  <!-- BreadcrumbList 面包屑导航 Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.fengxiangld.cn/"},
+      {"@type": "ListItem", "position": 2, "name": "常见问题", "item": "https://www.fengxiangld.cn/faq.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我们</a>
+        <a href="services.html">主营业务</a>
+        <a href="cases.html">客户案例</a>
+        <a href="news.html">行业动态</a>
+        <a href="faq.html" class="active" style="color:var(--primary);font-weight:600;">常见问题</a>
+        <a href="contact.html">联系我们</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:15217609018" class="btn-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          152-1760-9018
+        </a>
+        <a href="contact.html" class="btn-primary">免费咨询</a>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">首页</a>
+    <a href="about.html">关于我们</a>
+    <a href="services.html">主营业务</a>
+    <a href="cases.html">客户案例</a>
+    <a href="news.html">行业动态</a>
+    <a href="faq.html" style="color:var(--primary);">常见问题</a>
+    <a href="contact.html">联系我们</a>
+    <div class="mobile-cta">
+      <a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a>
+      <a href="contact.html" class="btn-outline" style="justify-content:center;">免费咨询</a>
+    </div>
+  </div>
+
+  <!-- ========== Hero Section ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>常见问题<span class="highlight">FAQ</span></h1>
+      <p>我们整理了企业最常咨询的财税问题，帮您快速找到答案</p>
+      
+      <!-- 搜索框 -->
+      <div class="faq-search-wrapper">
+        <input type="text" class="faq-search" id="faqSearch" placeholder="搜索您的问题，如：灵活用工、注册公司..." autocomplete="off">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ Content ========== -->
+  <section class="faq-container">
+    <div class="container">
+
+      <!-- 分类标签 -->
+      <div class="faq-categories" id="faqCategories">
+        <button class="category-btn active" data-category="all">全部问题</button>
+        <button class="category-btn" data-category="flexible">灵活用工</button>
+        <button class="category-btn" data-category="invoice">数电发票</button>
+        <button class="category-btn" data-category="business">工商注册</button>
+        <button class="category-btn" data-category="tax">税务合规</button>
+        <button class="category-btn" data-category="service">企业服务</button>
+        <button class="category-btn" data-category="about">关于我们</button>
+      </div>
+
+      <!-- 灵活用工 -->
+      <div class="faq-group" data-category="flexible" id="flexible">
+        <h2 class="faq-group-title">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          灵活用工常见问题
+        </h2>
+        
+        <div class="faq-item">
+          <button class="faq-question">灵活用工有哪些风险？企业还可以用吗？如何规避？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              灵活用工的主要风险包括：1）虚假业务风险：没有真实业务支撑，被认定为虚开发票；2）资金回流风险：资金路径与业务链条不一致，触发金税四期预警；3）核定征收政策收紧风险：多地已取消或收紧核定征收，合规空间缩小；4）劳动关系模糊风险：用工关系认定不清，可能引发劳动纠纷。<br><br>企业仍然可以使用灵活用工，但必须做到：确保业务真实（有真实的用工需求和服务交付）；合同链条完整（企业→平台→个人，三方合同齐备）；资金流与业务流一致（款项走平台结算，不留私账）；选择合规园区（政策稳定、监管透明的税收优惠园区）。建议通过专业机构评估企业实际情况，制定合规落地方案。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">灵活用工平台能帮企业节省多少成本？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              根据行业数据，通过合规的灵活用工模式，企业一般可以降低15%-30%的综合用工成本。主要包括：降低社保公积金支出、优化所得税负担、减少管理成本等。具体节省比例需要根据企业实际情况、人员结构、所在地区政策等因素综合测算。我们提供免费的成本测算服务，欢迎咨询。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">灵活用工平台如何保证合规性？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              合规的核心要素包括：真实业务关系、完善的合同链条、资金流与业务流一致、依法申报纳税。我们的灵活用工平台通过与多个税收优惠园区合作，为企业提供从业务分包、合同签订、资金结算到完税证明的全流程合规方案，确保在金税四期环境下安全运行。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">灵活用工适合哪些行业？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              灵活用工模式适用于有大量临时性、季节性、项目制用工需求的行业，包括但不限于：物流配送、在线教育、网络直播、共享出行、餐饮零售、软件开发、市场推广、家电安装、建筑工程等。如果您所在行业存在大量弹性用工需求，都可以考虑灵活用工方案。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 数电发票 -->
+      <div class="faq-group" data-category="invoice" id="invoice">
+        <h2 class="faq-group-title">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          数电发票常见问题
+        </h2>
+        
+        <div class="faq-item">
+          <button class="faq-question">数电发票是什么？怎么开？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              数电票全称"全面数字化的电子发票"，是金税四期推行的全新发票形态。开具数电发票无需税控设备，通过电子税务局即可操作。具体步骤：登录电子税务局→进入"我要办税"→"发票开具"→填写发票信息→提交开具。数电票支持红字发票自动冲销、发票用途自主选择等优势，大幅简化了传统发票管理流程。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">数电发票和纸质发票有什么区别？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              数电发票相比传统纸质发票的优势包括：无需税控设备、开具便捷、报销入账一体化、防篡改、易于归档管理、不受时空限制。但数电发票目前逐步推行中，部分地区和企业仍需使用纸质发票。我们提供数电发票与纸质发票兼容的管理方案，帮助企业平稳过渡。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">数电发票容易出现哪些风险？如何防范？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              数电发票主要风险包括：虚开风险、重复报销风险、发票信息错误等。防范措施包括：建立发票审核流程、使用发票管理系统进行查重、确保业务真实合规、定期核对发票数据。我们的数电发票服务包含智能风控系统，可以自动识别异常发票，帮助企业规避风险。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 工商注册 -->
+      <div class="faq-group" data-category="business" id="business">
+        <h2 class="faq-group-title">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/><path d="M5 21V10.87M19 21V10.87"/></svg>
+          工商注册常见问题
+        </h2>
+        
+        <div class="faq-item">
+          <button class="faq-question">在广州注册公司需要什么材料？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              在广州注册公司主要需要：1）公司名称（准备3-5个备选）；2）注册地址证明材料（租赁合同或产权证明）；3）法定代表人身份证；4）股东身份证及出资比例；5）经营范围；6）注册资本金额；7）财务人员信息。目前广州实行"一网通办"，可通过广东政务服务网线上提交材料，最快当天可完成注册。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">公司注册需要多少时间和费用？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              正常公司注册流程需要3-5个工作日，包括核名、提交材料、领取营业执照、刻章、银行开户、税务登记等步骤。现在大部分地区政府规费（营业执照、刻章等）已实现免费或非常低费用，企业注册本身没有额外行政收费。银行开户费用因银行而异，国有大行一般收取300-800元/年的账户管理费，部分商业银行为吸引客户会减免或只收200-500元/年。如果委托代理机构办理，服务费一般在1000-3000元不等，具体取决于服务内容和服务周期。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">没有注册地址可以注册公司吗？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以的。目前广州多地允许使用集群注册地址、孵化器地址、商务秘书地址等进行注册。这些地址成本低、合法合规，适合初创企业。我们有多种注册地址解决方案，可以根据您的需求推荐最合适的方案。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">个体户、有限公司、合伙企业有什么区别？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              主要区别在于：1）法律责任：个体户承担无限责任，有限公司承担有限责任；2）税收政策：个体户缴纳个人所得税，有限公司缴纳企业所得税+个人所得税；3）融资能力：有限公司更容易获得投资和贷款；4）管理复杂度：个体户最简单，有限公司相对复杂。建议根据业务规模、发展规划选择合适的主体类型。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">代理记账一个月多少钱？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              代理记账费用根据企业规模和纳税人类型而定：1）小规模纳税人：200-300元/月；2）一般纳税人：400-600元/月；3）特殊行业（如进出口、电商等）：600-1000元/月。我们提供透明的收费标准，无隐形收费，首次咨询免费，可根据企业实际情况定制最经济的方案。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">商标注册需要多长时间？多少钱？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              商标注册流程一般需要8-12个月，包括形式审查（1个月）、实质审查（4-6个月）、初审公告（3个月）、核准注册（1个月）费用方面：官方规费270元/类（限定本类10个商品/项目名称），超过10个项目每个加收27元；如委托代理机构，服务费另计。建议尽早注册，避免被抢注。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">高新技术企业认定有什么好处？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              高新技术企业认定的主要优惠政策包括：1）企业所得税减按15%征收（正常为25%）；2）研发费用加计扣除；3）技术转让所得免税；4）地方政府奖励（各地不同，一般5-100万不等）；5）品牌提升，利于招投标和融资。认定条件包括：知识产权、研发投入占比、科技人员占比、高新收入占比等。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 税务合规 -->
+      <div class="faq-group" data-category="tax" id="tax">
+        <h2 class="faq-group-title">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          税务合规常见问题
+        </h2>
+        
+        <div class="faq-item">
+          <button class="faq-question">什么是金税四期？对企业有什么影响？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              金税四期是税务总局建设的新一代税收征管系统，实现了"以数治税"。主要特点包括：全方位数据监控（税务、银行、工商、社保等多部门数据打通）、智能风险识别（AI自动预警异常）、全税种全覆盖、全业务流程监管。对企业的影响是税务合规要求更高，违规行为更容易被识别。建议企业提前做好税务合规规划。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">小规模纳税人和一般纳税人有什么区别？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              主要区别在于：1）税率不同：小规模纳税人增值税率为3%（部分行业1%），一般纳税人为13%/9%/6%等多档；2）抵扣不同：一般纳税人可以抵扣进项税额，小规模不能；3）标准不同：年应税销售额超过500万元需登记为一般纳税人；4）客户群体：大客户通常是一般纳税人，需要开具专用发票。选择哪种需要根据企业实际业务情况和客户需求决定。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">公司不经营了，不记账报税会有什么后果？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              即使公司没有经营，也必须按时记账报税（零申报）。如果不申报，会被税务机关列入非正常户，产生以下后果：1）罚款：每月200-2000元不等；2）法人信用受损：影响个人征信，限制高消费；3）营业执照被吊销：吊销后3年内不得重新注册；4）税务黑名单：所有税务机关联合惩戒。建议不再经营时及时办理注销手续。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">税务稽查来了怎么办？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              遇到税务稽查应保持冷静，配合调查：1）及时联系专业财税机构评估风险；2）整理相关凭证和账目；3）如实回答问题，不提供虚假材料；4）如有问题，积极补缴税款和滞纳金。预防胜于治疗，平时做好税务合规管理，定期检查账务，可以有效降低被查风险。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 企业服务 -->
+      <div class="faq-group" data-category="service" id="service">
+        <h2 class="faq-group-title">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+          企业服务常见问题
+        </h2>
+        
+        <div class="faq-item">
+          <button class="faq-question">小程序开发需要多长时间？多少费用？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              小程序开发周期一般为2-8周，具体取决于功能复杂度。费用方面：1）基础展示型小程序：3000-8000元；2）电商/预约型小程序：8000-20000元；3）定制化功能开发：20000元以上。我们提供从需求分析、UI设计、前端开发、后端对接到上线发布的全流程服务，支持微信小程序、支付宝小程序等多平台，帮助企业快速搭建线上服务入口。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">企业网站搭建需要注意什么？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              企业网站搭建需要重点关注：1）响应式设计，适配PC和移动端；2）SEO友好结构，便于搜索引擎收录；3）页面加载速度，影响用户体验和搜索排名；4）品牌一致性，视觉风格与企业形象统一；5）安全合规，部署SSL证书和ICP备案。我们的网站服务涵盖企业官网、品牌展示站、营销落地页等，从设计到上线一站式交付，上线后提供持续维护和SEO优化服务。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">餐饮数字化升级包括哪些内容？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              餐饮数字化升级涵盖：1）扫码点餐系统，提升点单效率减少人力成本；2）会员管理平台，积分储值提升复购率；3）外卖接单整合，统一管理美团/饿了么等平台订单；4）库存管理系统，实时掌握食材消耗和成本；5）数据分析看板，通过销售数据优化菜品和定价。我们为餐饮企业提供从系统选型、部署实施到运营指导的全套数字化方案，帮助门店降本增效。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">什么是GEO推广？对企业有什么帮助？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              GEO（Generative Engine Optimization）是面向AI搜索引擎的优化策略，让企业信息在Google AI Overview、百度AI搜索、ChatGPT等AI回答中被准确引用。相比传统SEO，GEO更注重结构化内容、问答式布局、权威性信号。对企业的好处包括：1）抢占AI搜索流量红利；2）提升品牌在AI回答中的曝光；3）建立行业权威性。我们提供GEO优化方案，包括FAQ结构化数据、内容优化、AI搜索引擎收录等，帮助企业在AI时代获得更多精准流量。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 关于我们 -->
+      <div class="faq-group" data-category="about" id="about">
+        <h2 class="faq-group-title">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          关于我们常见问题
+        </h2>
+
+        <div class="faq-item">
+          <button class="faq-question">你们的服务范围覆盖哪些地区？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              工商财税服务覆盖广东省全省各地市，包括广州、深圳、东莞、佛山、珠海等。灵活用工解决方案可在全国多个税收优惠园区落地。数电发票服务、税务咨询等服务覆盖全国。企业服务等数字化业务以广州为中心，辐射珠三角地区。具体服务范围请咨询在线客服。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">烽享财税是正规公司吗？资质如何？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              烽享财税旗下拥有广东烽享联动信息科技有限公司、广州烽享云科技信息有限公司、广州烽享企业服务有限公司三家关联公司，均依法注册成立，持有相关行业资质。公司秉承"分享、专注、审慎"的企业价值观，11年深耕财税服务行业，累计服务企业客户超千家，在珠三角地区建立了良好的口碑和信任。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">烽享财税和传统代账公司有什么不同？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              烽享财税不仅是代账公司，更是一家财税科技公司。与传统代账公司的区别：1）技术驱动：运用数字化工具和AI技术提升服务效率；2）一站式服务：灵活用工、数电发票、工商注册、税务合规、企业数字化服务全覆盖；3）行业深度：深耕灵活用工、餐饮数字化等细分领域；4）战略思维：不仅帮您做账报税，更帮您思考合规降本和长期发展规划。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">如何联系烽享财税？</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              您可以通过以下方式联系我们：1）电话咨询：152-1760-9018（工作日9:00-18:00）；2）在线咨询：访问官网联系页面，提交您的需求；3）邮件沟通：market@fengxiangtax.com；4）现场咨询：广州市海珠区新港中路397号 T.I.T创意园自编3-9号。也可以关注我们的微信公众号、抖音号、视频号获取最新财税资讯。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA卡片 -->
+      <div class="faq-cta-card">
+        <h3>没有找到您的问题？</h3>
+        <p>我们的财税专家团队随时为您解答疑问，提供免费咨询服务</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html" class="btn-primary" style="padding:12px 32px;font-size:16px;">
+            在线咨询
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:15217609018" class="btn-outline" style="padding:12px 32px;font-size:16px;">
+            电话咨询
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
+          </a>
+          <p>广东烽享联动信息科技有限公司<br>广州烽享云科技信息有限公司<br>广州烽享企业服务有限公司<br>专注企业全生命周期一站式财税综合服务<br>秉承"分享、专注、审慎"的企业价值观</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="微信" title="微信">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 01.598.082l1.584.926a.272.272 0 00.14.046c.133 0 .241-.11.241-.245 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 01-.023-.156.49.49 0 01.201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-2.036 2.84c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.97-.983zm4.844 0c.535 0 .969.44.969.982a.976.976 0 01-.969.983.976.976 0 01-.969-.983c0-.542.434-.983.969-.983z"/></svg>
+              <div class="qr-tooltip"><img src="images/wechat.png" alt="微信二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信视频号" title="微信视频号">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <div class="qr-tooltip"><img src="images/shipinhao.png" alt="视频号二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="抖音" title="抖音">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              <div class="qr-tooltip"><img src="images/douyin.png" alt="抖音二维码"></div>
+            </a>
+            <a href="#" class="social-link" aria-label="微信公众号" title="微信公众号">
+              <img src="images/gzhlogo.png" alt="微信公众号" style="width:18px;height:18px;object-fit:contain;">
+              <div class="qr-tooltip"><img src="images/gzh.jpg" alt="公众号二维码"></div>
+            </a>
+          
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>主营业务</h4>
+          <a href="services.html#flexible">灵活用工</a>
+          <a href="services.html#invoice">数电发票</a>
+          <a href="services.html#business">工商财税</a>
+          <a href="services.html#tax">税务咨询</a>
+          <a href="services.html#enterprise">企业服务</a>
+        </div>
+        <div class="footer-col">
+          <h4>常见问题</h4>
+          <a href="faq.html">全部FAQ</a>
+          <a href="faq.html#flexible">灵活用工</a>
+          <a href="faq.html#invoice">数电发票</a>
+          <a href="faq.html#business">工商注册</a>
+          <a href="faq.html#tax">税务合规</a>
+          <a href="faq.html#about">关于我们</a>
+        </div>
+        <div class="footer-col">
+          <h4>关于烽享</h4>
+          <a href="about.html">公司介绍</a>
+          <a href="cases.html">客户案例</a>
+          <a href="news.html">行业动态</a>
+        </div>
+        <div class="footer-col">
+          <h4>联系我们</h4>
+          <a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a>
+          <a href="tel:15217609018">152-1760-9018</a>
+          <a href="contact.html">在线咨询</a>
+          <a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          <span>&copy; 2023-2026 烽享财税 FengXiangTax. All Rights Reserved.</span>
+        </div>
+        <div>
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2024339069号</a>
+          &nbsp;|&nbsp;
+          <img src="images/gonganlogo.png" alt="公安备案" style="height:14px;vertical-align:middle;margin-right:4px;"><a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener">粤公网安备44010602011937号</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // FAQ页面交互逻辑
+    (function () {
+      // 手风琴效果
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function (item) {
+        var btn = item.querySelector('.faq-question');
+        btn.addEventListener('click', function () {
+          var isActive = item.classList.contains('active');
+          // 关闭所有（如需手风琴模式，取消下一行注释）
+          // faqItems.forEach(function (i) { i.classList.remove('active'); });
+          if (!isActive) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      });
+
+      // 分类筛选
+      var categoryBtns = document.querySelectorAll('.category-btn');
+      var groups = document.querySelectorAll('.faq-group');
+      var allItems = document.querySelectorAll('.faq-item');
+
+      categoryBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var category = btn.getAttribute('data-category');
+
+          // 更新按钮状态
+          categoryBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          // 筛选显示
+          if (category === 'all') {
+            groups.forEach(function (g) { g.style.display = ''; });
+            allItems.forEach(function (i) { i.classList.remove('hidden'); });
+          } else {
+            groups.forEach(function (g) {
+              if (g.getAttribute('data-category') === category) {
+                g.style.display = '';
+              } else {
+                g.style.display = 'none';
+              }
+            });
+          }
+
+          // 清除搜索
+          document.getElementById('faqSearch').value = '';
+          allItems.forEach(function (i) { i.classList.remove('hidden'); });
+        });
+      });
+
+      // 搜索功能
+      var searchInput = document.getElementById('faqSearch');
+      searchInput.addEventListener('input', function () {
+        var keyword = this.value.toLowerCase().trim();
+
+        // 重置分类
+        categoryBtns.forEach(function (b) { b.classList.remove('active'); });
+        categoryBtns[0].classList.add('active');
+        groups.forEach(function (g) { g.style.display = ''; });
+
+        if (!keyword) {
+          allItems.forEach(function (i) { i.classList.remove('hidden'); });
+          return;
+        }
+
+        allItems.forEach(function (item) {
+          var question = item.querySelector('.faq-question').textContent.toLowerCase();
+          var answer = item.querySelector('.faq-answer-inner').textContent.toLowerCase();
+          if (question.indexOf(keyword) !== -1 || answer.indexOf(keyword) !== -1) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+
+      // 根据 URL hash 自动筛选并滚动到对应分类
+      function handleHash() {
+        var hash = window.location.hash.replace('#', '');
+        if (!hash) return;
+
+        // 找到匹配的按钮
+        var matchedBtn = Array.from(categoryBtns).find(function (b) {
+          return b.getAttribute('data-category') === hash;
+        });
+
+        if (matchedBtn) {
+          // 激活分类按钮
+          categoryBtns.forEach(function (b) { b.classList.remove('active'); });
+          matchedBtn.classList.add('active');
+
+          // 只显示对应分组
+          groups.forEach(function (g) {
+            if (g.getAttribute('data-category') === hash) {
+              g.style.display = '';
+            } else {
+              g.style.display = 'none';
+            }
+          });
+
+          allItems.forEach(function (i) { i.classList.remove('hidden'); });
+          document.getElementById('faqSearch').value = '';
+
+          // 平滑滚动到对应分组
+          setTimeout(function () {
+            var target = document.getElementById(hash);
+            if (target) {
+              var headerOffset = 120;
+              var top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+          }, 100);
+        }
+      }
+
+      // 页面加载时处理 hash
+      handleHash();
+
+      // 监听 hash 变化（用户点击 footer 链接时触发）
+      window.addEventListener('hashchange', handleHash);
+    })();
+  </script>
+  <!-- FAQ Schema 自动同步 —— 遍历页面所有问答，生成完整 FAQPage Schema -->
+  <script>
+  function buildFullFAQSchema() {
+    var items = document.querySelectorAll('.faq-item');
+    var mainEntity = [];
+
+    items.forEach(function(item) {
+      var qEl = item.querySelector('.faq-question');
+      var aEl = item.querySelector('.faq-answer-inner');
+      if (qEl && aEl) {
+        var question = qEl.textContent.trim();
+        var answer = aEl.textContent.trim();
+        if (question && answer) {
+          mainEntity.push({
+            "@type": "Question",
+            "name": question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": answer
+            }
+          });
+        }
+      }
+    });
+
+    var schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": mainEntity
+    };
+
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    console.log('FAQ Schema 已注入 ' + mainEntity.length + ' 个问题');
+  }
+
+  document.addEventListener('DOMContentLoaded', buildFullFAQSchema);
+  </script>
+</body>
+</html>

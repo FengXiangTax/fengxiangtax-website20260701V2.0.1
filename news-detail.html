@@ -99,6 +99,7 @@
         <a href="services.html">主营业务</a>
         <a href="cases.html">客户案例</a>
         <a href="news.html" class="active">行业动态</a>
+        <a href="faq.html" style="color:var(--primary);font-weight:600;">常见问题</a>
         <a href="contact.html">联系我们</a>
       </nav>
       <div class="header-cta">
@@ -112,7 +113,13 @@
     </div>
   </header>
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">首页</a><a href="about.html">关于我们</a><a href="services.html">主营业务</a><a href="cases.html">客户案例</a><a href="news.html" class="active">行业动态</a><a href="contact.html">联系我们</a>
+    <a href="index.html">首页</a>
+    <a href="about.html">关于我们</a>
+    <a href="services.html">主营业务</a>
+    <a href="cases.html">客户案例</a>
+    <a href="news.html" class="active">行业动态</a>
+    <a href="faq.html" style="color:var(--primary);">常见问题</a>
+    <a href="contact.html">联系我们</a>
     <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a></div>
   </div>
 
@@ -402,6 +409,74 @@
         '</div>';
       container.innerHTML = html;
     })();
+  </script>
+  <!-- Article + BreadcrumbList Schema 自动注入（复用已有 articles 数组） -->
+  <script>
+  function injectArticleSchema() {
+    var params = new URLSearchParams(window.location.search);
+    var id = parseInt(params.get('id')) || 1;
+
+    var article = typeof articles !== 'undefined'
+      ? articles.find(function(a) { return a.id === id; }) || articles[0]
+      : { id: id, title: '烽享财税行业动态', date: '2026-06-28', category: '行业资讯' };
+
+    var categoryMap = {
+      'policy': '政策解读',
+      'industry': '行业资讯',
+      'company': '公司动态'
+    };
+    var section = categoryMap[article.category] || '行业资讯';
+
+    // 1. Article Schema
+    var articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": article.title,
+      "datePublished": article.date,
+      "dateModified": article.date,
+      "author": {
+        "@type": "Organization",
+        "name": "烽享财税",
+        "url": "https://www.fengxiangld.cn"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "烽享财税",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fengxiangld.cn/images/logo.png"
+        }
+      },
+      "articleSection": section,
+      "inLanguage": "zh-CN",
+      "url": "https://www.fengxiangld.cn/news-detail.html?id=" + id
+    };
+
+    var s1 = document.createElement('script');
+    s1.type = 'application/ld+json';
+    s1.textContent = JSON.stringify(articleSchema);
+    document.head.appendChild(s1);
+
+    // 2. BreadcrumbList Schema
+    var breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.fengxiangld.cn/"},
+        {"@type": "ListItem", "position": 2, "name": "行业动态", "item": "https://www.fengxiangld.cn/news.html"},
+        {"@type": "ListItem", "position": 3, "name": article.title.substring(0, 20) + "..."}
+      ]
+    };
+
+    var s2 = document.createElement('script');
+    s2.type = 'application/ld+json';
+    s2.textContent = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(s2);
+
+    console.log('Article + Breadcrumb Schema 已注入: ' + article.title);
+  }
+
+  document.addEventListener('DOMContentLoaded', injectArticleSchema);
   </script>
 </body>
 </html>

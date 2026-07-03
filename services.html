@@ -60,6 +60,79 @@
     }
   </style>
   <script src="js/tracking.js"></script>
+  <!-- Service Schema：主营业务结构化数据，让AI理解5项核心服务 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "烽享财税主营业务",
+    "itemListElement": [
+      {
+        "@type": "ListItem", "position": 1,
+        "item": {
+          "@type": "Service", "serviceType": "灵活用工",
+          "name": "灵活用工平台",
+          "description": "灵活用工平台，多税地解决方案，帮助企业合规降本，规避用工风险。覆盖物流配送、在线教育、共享出行、网络直播等行业。",
+          "url": "https://www.fengxiangld.cn/services.html#flexible",
+          "provider": {"@type": "Organization", "name": "烽享财税"},
+          "areaServed": {"@type": "AdministrativeArea", "name": "广东省"}
+        }
+      },
+      {
+        "@type": "ListItem", "position": 2,
+        "item": {
+          "@type": "Service", "serviceType": "数电发票",
+          "name": "数电发票服务",
+          "description": "兼容数电发票和纸质发票，紧跟金税四期政策，确保发票管理合规高效。",
+          "url": "https://www.fengxiangld.cn/services.html#invoice",
+          "provider": {"@type": "Organization", "name": "烽享财税"}
+        }
+      },
+      {
+        "@type": "ListItem", "position": 3,
+        "item": {
+          "@type": "Service", "serviceType": "工商财税",
+          "name": "工商财税服务",
+          "description": "广东全省各地市覆盖，公司注册、代理记账、商标注册、软著申请一站式服务。",
+          "url": "https://www.fengxiangld.cn/services.html#business",
+          "provider": {"@type": "Organization", "name": "烽享财税"},
+          "areaServed": {"@type": "AdministrativeArea", "name": "广东省"}
+        }
+      },
+      {
+        "@type": "ListItem", "position": 4,
+        "item": {
+          "@type": "Service", "serviceType": "税务咨询",
+          "name": "税务咨询服务",
+          "description": "专业涉税咨询，金税四期合规筹划，税务稽查应对，税务合规计划方案。",
+          "url": "https://www.fengxiangld.cn/services.html#tax",
+          "provider": {"@type": "Organization", "name": "烽享财税"}
+        }
+      },
+      {
+        "@type": "ListItem", "position": 5,
+        "item": {
+          "@type": "Service", "serviceType": "企业服务",
+          "name": "企业数字化服务",
+          "description": "小程序开发、网站建设、地图推广、大众点评运营、餐饮数字化转型。",
+          "url": "https://www.fengxiangld.cn/services.html#enterprise",
+          "provider": {"@type": "Organization", "name": "烽享财税"}
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- BreadcrumbList 面包屑导航 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.fengxiangld.cn/"},
+      {"@type": "ListItem", "position": 2, "name": "主营业务", "item": "https://www.fengxiangld.cn/services.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -69,8 +142,13 @@
         <img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;">
       </a>
       <nav class="main-nav">
-        <a href="index.html">首页</a><a href="about.html">关于我们</a>
-        <a href="services.html" class="active">主营业务</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a><a href="contact.html">联系我们</a>
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我们</a>
+        <a href="services.html" class="active">主营业务</a>
+        <a href="cases.html">客户案例</a>
+        <a href="news.html">行业动态</a>
+        <a href="faq.html" style="color:var(--primary);font-weight:600;">常见问题</a>
+        <a href="contact.html">联系我们</a>
       </nav>
       <div class="header-cta">
         <a href="tel:15217609018" class="btn-phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>152-1760-9018</a>
@@ -80,8 +158,15 @@
     </div>
   </header>
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">首页</a><a href="about.html">关于我们</a><a href="services.html" class="active">主营业务</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a><a href="contact.html">联系我们</a>
-    <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a></div>
+    <a href="index.html">首页</a>
+    <a href="about.html">关于我们</a>
+    <a href="services.html" class="active">主营业务</a>
+    <a href="cases.html">客户案例</a>
+    <a href="news.html">行业动态</a>
+    <a href="faq.html" style="color:var(--primary);">常见问题</a>
+    <a href="contact.html">联系我们</a>
+    <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a>
+      <a href="contact.html" class="btn-outline" style="justify-content:center;">免费咨询</a></div>
   </div>
 
   <section class="page-hero">
@@ -199,12 +284,12 @@
         <div class="service-block-text">
           <div class="service-tag">核心业务</div>
           <h2><span class="highlight">企业服务</span></h2>
-          <p>一站式企业数字化服务，涵盖小程序开发、网站建设、高德/百度地图推广、大众点评运营、餐饮数字化转型等，助力企业线上线下融合发展，提升品牌曝光和获客能力。</p>
+          <p>一站式企业数字化服务，涵盖小程序开发、网站建设、餐饮数字化转型、GEO推广（AI搜索引擎优化）、高德/百度地图推广、大众点评运营等，助力企业线上线下融合发展，抢占AI搜索流量红利，提升品牌曝光和获客能力。</p>
           <div class="service-features">
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>小程序/网站开发</div>
-            <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>地图商户推广</div>
-            <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>大众点评运营</div>
-            <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>餐饮数字化转型</div>
+            <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>GEO推广优化</div>
+            <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>餐饮数字化升级</div>
+            <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>地图/点评推广</div>
           </div>
           <a href="contact.html" class="btn-primary">立即咨询</a>
         </div>
@@ -268,6 +353,7 @@
           </div>
         </div>
         <div class="footer-col"><h4>主营业务</h4><a href="services.html#flexible">灵活用工</a><a href="services.html#invoice">数电发票</a><a href="services.html#business">工商财税</a><a href="services.html#tax">税务咨询</a><a href="services.html#enterprise">企业服务</a></div>
+        <div class="footer-col"><h4>常见问题</h4><a href="faq.html">全部FAQ</a><a href="faq.html#flexible">灵活用工</a><a href="faq.html#invoice">数电发票</a><a href="faq.html#business">工商注册</a><a href="faq.html#tax">税务合规</a><a href="faq.html#about">关于我们</a></div>
         <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
         <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
       </div>

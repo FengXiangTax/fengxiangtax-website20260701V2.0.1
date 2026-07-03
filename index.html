@@ -9,6 +9,75 @@
   <meta name="keywords" content="烽享财税,灵活用工,数电发票,工商财税,税务咨询,代理记账,公司注册">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/tracking.js"></script>
+  <!-- Organization + LocalBusiness Schema：品牌身份核心数据，让AI搜索引擎理解"我是谁、在哪、做什么" -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "烽享财税",
+    "alternateName": "广东烽享联动信息科技有限公司",
+    "legalName": "广东烽享联动信息科技有限公司",
+    "description": "一站式企业财税综合服务平台，提供灵活用工、数电发票、工商财税、税务咨询、企业服务，帮助企业合规经营，降本增效。",
+    "url": "https://www.fengxiangld.cn",
+    "logo": "https://www.fengxiangld.cn/images/logo.png",
+    "image": "https://www.fengxiangld.cn/images/logo.png",
+    "telephone": "+86-152-1760-9018",
+    "email": "service@fengxiangld.cn",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CN",
+      "addressRegion": "广东省",
+      "addressLocality": "广州市",
+      "streetAddress": "海珠区新港中路397号T.I.T创意园自编3-9号",
+      "postalCode": "510310"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.0997,
+      "longitude": 113.3244
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }],
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "广东省"
+    },
+    "foundingDate": "2023",
+    "founder": {"@type": "Person", "name": "张海康"},
+    "slogan": "让企业财税更简单、更合规",
+    "sameAs": [
+      "https://www.fengxiangld.cn",
+      "https://www.zhihu.com/people/66-88-44-71-43",
+      "https://author.baidu.com/home?from=bjh_article&app_id=1730157065834813",
+      "https://www.xiaohongshu.com/user/profile/658ecc350000000022010468"
+    ],
+    "knowsAbout": [
+      "灵活用工",
+      "数电发票",
+      "工商财税",
+      "代理记账",
+      "公司注册",
+      "金税四期",
+      "税务合规",
+      "个税核定征收"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "财税服务",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "灵活用工", "description": "灵活用工平台，多税地解决方案"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "数电发票", "description": "兼容数电发票和纸质发票"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "工商财税", "description": "公司注册、代理记账、商标软著"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "税务咨询", "description": "金税四期合规筹划"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "企业服务", "description": "小程序开发、网站建设"}}
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -20,11 +89,12 @@
       </a>
 
       <nav class="main-nav">
-        <a href="/" class="active">首页</a>
+        <a href="index.html" class="active">首页</a>
         <a href="about.html">关于我们</a>
         <a href="services.html">主营业务</a>
         <a href="cases.html">客户案例</a>
         <a href="news.html">行业动态</a>
+        <a href="faq.html" style="color:var(--primary);font-weight:600;">常见问题</a>
         <a href="contact.html">联系我们</a>
       </nav>
 
@@ -51,6 +121,7 @@
     <a href="services.html">主营业务</a>
     <a href="cases.html">客户案例</a>
     <a href="news.html">行业动态</a>
+    <a href="faq.html" style="color:var(--primary);">常见问题</a>
     <a href="contact.html">联系我们</a>
     <div class="mobile-cta">
       <a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a>
@@ -126,7 +197,7 @@
       <div class="section-header fade-up">
         <div class="eyebrow">核心服务</div>
         <h2>五大主营业务，<span class="highlight">一站式赋能</span></h2>
-        <p>覆盖企业全生命周期财税需求，从公司注册到企业合规，从发票开具到合规方案落地</p>
+        <p>覆盖企业全生命周期财税需求，从注册到合规，从开票到筹划</p>
       </div>
       <div class="services-grid">
         <div class="service-card fade-up">
@@ -167,7 +238,7 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>税务咨询</h3>
-          <p>专业涉税咨询服务，解决各行业企业税务疑难问题，金税四期税务合规计划</p>
+          <p>专业涉税咨询服务，解决各行业企业税务疑难问题，金税四期合规筹划</p>
           <a href="services.html#tax" class="service-link">
             了解详情
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -400,6 +471,15 @@
           <a href="services.html#business">工商财税</a>
           <a href="services.html#tax">税务咨询</a>
           <a href="services.html#enterprise">企业服务</a>
+        </div>
+        <div class="footer-col">
+          <h4>常见问题</h4>
+          <a href="faq.html">全部FAQ</a>
+          <a href="faq.html#flexible">灵活用工</a>
+          <a href="faq.html#invoice">数电发票</a>
+          <a href="faq.html#business">工商注册</a>
+          <a href="faq.html#tax">税务合规</a>
+          <a href="faq.html#about">关于我们</a>
         </div>
         <div class="footer-col">
           <h4>关于烽享</h4>
