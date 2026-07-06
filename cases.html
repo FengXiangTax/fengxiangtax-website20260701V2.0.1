@@ -47,6 +47,9 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     .case-card:hover {
       transform: translateY(-4px);
@@ -62,7 +65,7 @@
       color: var(--primary);
       font-size: 13px;
     }
-    .case-card-body { padding: 24px; }
+    .case-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
     .case-tag {
       display: inline-block;
       font-size: 12px; font-weight: 600;
@@ -77,11 +80,17 @@
     .case-card-body p {
       font-size: 14px; color: var(--text-secondary);
       line-height: 1.7; margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: calc(14px * 1.7 * 2);
     }
     .case-meta {
       display: flex; justify-content: space-between;
       font-size: 13px; color: var(--text-light);
       padding-top: 12px; border-top: 1px solid var(--border-color);
+      margin-top: auto;
     }
     @media (max-width: 1024px) {
       .cases-grid { grid-template-columns: repeat(2, 1fr); }
@@ -114,7 +123,16 @@
       <nav class="main-nav">
         <a href="index.html">首页</a>
         <a href="about.html">关于我们</a>
-        <a href="services.html">主营业务</a>
+        <div class="dropdown">
+          <a href="services.html">主营业务</a>
+          <div class="dropdown-menu">
+            <a href="service-flexible.html">灵活用工</a>
+            <a href="service-invoice.html">数电发票</a>
+            <a href="service-business.html">工商财税</a>
+            <a href="service-tax.html">税务咨询</a>
+            <a href="service-enterprise.html">企业服务</a>
+          </div>
+        </div>
         <a href="cases.html" class="active">客户案例</a>
         <a href="news.html">行业动态</a>
         <a href="faq.html" style="color:var(--primary);font-weight:600;">常见问题</a>
@@ -134,6 +152,13 @@
     <a href="index.html">首页</a>
     <a href="about.html">关于我们</a>
     <a href="services.html">主营业务</a>
+    <div class="mobile-dropdown-menu">
+      <a href="service-flexible.html">灵活用工</a>
+      <a href="service-invoice.html">数电发票</a>
+      <a href="service-business.html">工商财税</a>
+      <a href="service-tax.html">税务咨询</a>
+      <a href="service-enterprise.html">企业服务</a>
+    </div>
     <a href="cases.html" class="active">客户案例</a>
     <a href="news.html">行业动态</a>
     <a href="faq.html" style="color:var(--primary);">常见问题</a>
@@ -174,7 +199,7 @@
           <div class="case-card-body">
             <span class="case-tag">灵活用工</span>
             <h3>某物流平台灵活用工改造</h3>
-            <p>为日单量超10万的物流平台搭建灵活用工体系，覆盖全国12个税地，年度合规节支超300万元。</p>
+            <p>为日单量超10万的物流平台搭建灵活用工体系，覆盖12个税源地，年度合规节支超300万元。</p>
             <div class="case-meta">
               <span>物流行业</span>
               <span>2025年</span>
@@ -191,7 +216,7 @@
           <div class="case-card-body">
             <span class="case-tag">灵活用工</span>
             <h3>头部MCN机构灵活用工方案</h3>
-            <p>为粉丝量过亿的MCN机构定制灵活用工方案，解决主播、达人结算合规问题，降低企业税负约25%。</p>
+            <p>为头部MCN定制灵活用工方案，解决主播、达人结算合规问题，降低税负约25%。</p>
             <div class="case-meta">
               <span>直播行业</span>
               <span>2025年</span>
@@ -208,7 +233,7 @@
           <div class="case-card-body">
             <span class="case-tag">数电发票</span>
             <h3>连锁零售企业数电发票改造</h3>
-            <p>为拥有200+门店的连锁零售企业完成数电发票系统对接，日均开票量达5000+张，零差错运行。</p>
+            <p>为200+门店连锁零售企业完成数电发票系统对接，日均开票5000+张，零差错运行。</p>
             <div class="case-meta">
               <span>零售行业</span>
               <span>2025年</span>
@@ -259,7 +284,7 @@
           <div class="case-card-body">
             <span class="case-tag">税务咨询</span>
             <h3>金税四期下某集团税务合规整改</h3>
-            <p>协助某集团完成金税四期切换前的税务合规自查与整改，消除历史涉税风险18个，顺利通过评估。</p>
+            <p>协助某集团完成金税四期合规自查与整改，消除历史涉税风险18个，顺利通过评估。</p>
             <div class="case-meta">
               <span>集团企业</span>
               <span>2025年</span>
@@ -293,7 +318,7 @@
           <div class="case-card-body">
             <span class="case-tag">灵活用工</span>
             <h3>在线教育平台讲师结算合规</h3>
-            <p>为在线教育机构设计讲师灵活用工结算方案，覆盖全国300+兼职讲师，个税合规申报零差错。</p>
+            <p>为在线教育平台设计讲师灵活用工结算方案，覆盖300+兼职讲师，个税合规申报零差错。</p>
             <div class="case-meta">
               <span>教育行业</span>
               <span>2024年</span>
@@ -310,7 +335,7 @@
           <div class="case-card-body">
             <span class="case-tag">数电发票</span>
             <h3>物业服务企业数电发票落地</h3>
-            <p>为覆盖10城的物业集团部署数电发票系统，月均开票量8000+，实现电子发票自动开具与归档。</p>
+            <p>为10城物业集团部署数电发票系统，月均开票8000+张，实现自动开具与归档。</p>
             <div class="case-meta">
               <span>物业服务</span>
               <span>2024年</span>
@@ -328,7 +353,7 @@
           <div class="case-card-body">
             <span class="case-tag">数电发票</span>
             <h3>连锁餐饮品牌扫码开票系统</h3>
-            <p>为拥有50+门店的连锁餐饮品牌搭建扫码开票系统，顾客扫码即开发票，开票效率提升80%。</p>
+            <p>为50+门店连锁餐饮品牌搭建扫码开票系统，顾客扫码即开发票，效率提升80%。</p>
             <div class="case-meta">
               <span>餐饮行业</span>
               <span>2025年</span>
@@ -345,7 +370,7 @@
           <div class="case-card-body">
             <span class="case-tag">工商财税</span>
             <h3>OPC公司一站式财税综合服务</h3>
-            <p>为一家OPC（一人有限公司）提供注册、记账、报税、汇算清缴全流程财税综合服务，年度财税成本降低40%。</p>
+            <p>为OPC公司提供注册、记账、报税全流程服务，年度财税成本降低40%。</p>
             <div class="case-meta">
               <span>一人有限公司</span>
               <span>2025年</span>
@@ -362,7 +387,7 @@
           <div class="case-card-body">
             <span class="case-tag">税务咨询</span>
             <h3>游戏出海企业税务合规计划方案</h3>
-            <p>为游戏出海企业定制跨境税务合规计划方案，覆盖海外收入回流、转让定价等合规要点，节税超百万元。</p>
+            <p>为游戏出海企业定制跨境税务合规方案，覆盖海外收入回流、转让定价等要点，节税超百万元。</p>
             <div class="case-meta">
               <span>游戏行业</span>
               <span>2025年</span>
@@ -381,7 +406,7 @@
           <div class="case-card-body">
             <span class="case-tag">企业服务</span>
             <h3>连锁餐饮品牌微信小程序开发</h3>
-            <p>为某中式快餐品牌开发扫码点餐+会员管理小程序，上线首月订单量突破3万单，人力成本降低30%。</p>
+            <p>为中式快餐品牌开发扫码点餐小程序，上线首月订单量突破3万单，人力成本降低30%。</p>
             <div class="case-meta">
               <span>餐饮行业</span>
               <span>2025年</span>
@@ -398,7 +423,7 @@
           <div class="case-card-body">
             <span class="case-tag">企业服务</span>
             <h3>财税咨询公司品牌官网建设</h3>
-            <p>为一家财税咨询公司搭建响应式官网，集成在线预约和方案展示功能，上线后月均获客量增长150%。</p>
+            <p>为财税咨询公司搭建响应式官网，集成在线预约和方案展示，月均获客量增长150%。</p>
             <div class="case-meta">
               <span>财税行业</span>
               <span>2025年</span>
@@ -432,7 +457,7 @@
           <div class="case-card-body">
             <span class="case-tag">企业服务</span>
             <h3>本地餐饮大众点评运营推广</h3>
-            <p>为一家本地餐饮品牌运营大众点评店铺，优化团购套餐+评价管理，月均到店转化率提升65%。</p>
+            <p>为本地餐饮品牌运营大众点评店铺，优化团购套餐和评价管理，到店转化率提升65%。</p>
             <div class="case-meta">
               <span>餐饮行业</span>
               <span>2025年</span>
@@ -449,7 +474,7 @@
           <div class="case-card-body">
             <span class="case-tag">企业服务</span>
             <h3>连锁餐厅数字化转型全案</h3>
-            <p>为3家连锁餐厅提供扫码点餐+后厨管理+会员营销一体化数字方案，翻台率提升40%，月营收增长50万+。</p>
+            <p>为3家连锁餐厅提供数字化一体方案，翻台率提升40%，月营收增长50万+。</p>
             <div class="case-meta">
               <span>餐饮行业</span>
               <span>2025年</span>
@@ -501,7 +526,7 @@
           
           </div>
         </div>
-        <div class="footer-col"><h4>主营业务</h4><a href="services.html#flexible">灵活用工</a><a href="services.html#invoice">数电发票</a><a href="services.html#business">工商财税</a><a href="services.html#tax">税务咨询</a><a href="services.html#enterprise">企业服务</a></div>
+        <div class="footer-col"><h4>主营业务</h4><a href="service-flexible.html">灵活用工</a><a href="service-invoice.html">数电发票</a><a href="service-business.html">工商财税</a><a href="service-tax.html">税务咨询</a><a href="service-enterprise.html">企业服务</a></div>
         <div class="footer-col"><h4>常见问题</h4><a href="faq.html">全部FAQ</a><a href="faq.html#flexible">灵活用工</a><a href="faq.html#invoice">数电发票</a><a href="faq.html#business">工商注册</a><a href="faq.html#tax">税务合规</a><a href="faq.html#about">关于我们</a></div>
         <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
         <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>

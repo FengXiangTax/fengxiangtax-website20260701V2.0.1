@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数电发票详细方案 - 烽享财税</title>
+  <link rel="icon" href="images/biaoqianlogo.png">
+  <meta name="description" content="烽享财税数电发票详细方案：金税四期合规、数电+纸质双兼容、一键开票、API系统对接。">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { padding: calc(var(--header-height) + 60px) 0 60px; background: linear-gradient(135deg, var(--primary-bg) 0%, #FFFFFF 100%); text-align: center; }
+    .page-hero .breadcrumb { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .page-hero .breadcrumb a { color: var(--primary); }
+    .page-hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+    .page-hero h1 .highlight { color: var(--primary); }
+    .page-hero .subtitle { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+    .content-section { padding: 80px 0; }
+    .content-section.alt { background: var(--bg-light); }
+    .content-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 24px; text-align: center; }
+    .content-section h2 .highlight { color: var(--primary); }
+    .content-section .section-desc { text-align: center; font-size: 15px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 40px; line-height: 1.8; }
+
+    .flow-diagram { background: #FFFFFF; border-radius: var(--radius-lg); padding: 48px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); text-align: center; max-width: 900px; margin: 0 auto; }
+    .flow-diagram svg { max-width: 100%; height: auto; }
+
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+    .feature-card { background: #FFFFFF; border-radius: var(--radius-md); padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); border-left: 4px solid var(--primary); }
+    .feature-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+    .process-steps { max-width: 800px; margin: 0 auto; }
+    .process-step { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 32px; }
+    .step-number { width: 44px; height: 44px; background: var(--primary); color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; flex-shrink: 0; }
+    .step-content h4 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+    .step-content p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+    .scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+    .scenario-card { background: #FFFFFF; border-radius: var(--radius-md); padding: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); text-align: center; }
+    .scenario-card svg { margin-bottom: 12px; color: var(--primary); }
+    .scenario-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .scenario-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+    .compare-table { max-width: 800px; margin: 0 auto; background: #FFFFFF; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .compare-table table { width: 100%; border-collapse: collapse; }
+    .compare-table th { background: var(--primary-bg); padding: 16px; font-size: 14px; font-weight: 700; text-align: left; color: var(--primary); }
+    .compare-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .highlight-row td { background: #FFFCF5; color: var(--text-primary); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .page-hero h1 { font-size: 28px; }
+      .feature-grid, .scenario-grid { grid-template-columns: 1fr; }
+      .flow-diagram { padding: 24px; }
+    }
+  </style>
+  <script src="js/tracking.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage","name":"数电发票详细方案","description":"烽享财税数电发票方案：金税四期合规、双兼容、系统对接",
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"首页","item":"https://www.fengxiangld.cn/"},
+      {"@type":"ListItem","position":2,"name":"主营业务","item":"https://www.fengxiangld.cn/services.html"},
+      {"@type":"ListItem","position":3,"name":"数电发票详细方案"}]}
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;"></a>
+      <nav class="main-nav">
+        <a href="index.html">首页</a><a href="about.html">关于我们</a>
+        <div class="dropdown">
+          <a href="services.html" class="active">主营业务</a>
+          <div class="dropdown-menu">
+            <a href="service-flexible.html">灵活用工</a>
+            <a href="service-invoice.html">数电发票</a>
+            <a href="service-business.html">工商财税</a>
+            <a href="service-tax.html">税务咨询</a>
+            <a href="service-enterprise.html">企业服务</a>
+          </div>
+        </div>
+        <a href="cases.html">客户案例</a><a href="news.html">行业动态</a><a href="faq.html">常见问题</a>
+        <a href="contact.html">联系我们</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:15217609018" class="btn-phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>152-1760-9018</a>
+        <a href="contact.html" class="btn-primary">免费咨询</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">首页</a><a href="about.html">关于我们</a>
+    <a href="services.html" class="active">主营业务</a>
+    <div class="mobile-dropdown-menu">
+      <a href="service-flexible.html">灵活用工</a>
+      <a href="service-invoice.html">数电发票</a>
+      <a href="service-business.html">工商财税</a>
+      <a href="service-tax.html">税务咨询</a>
+      <a href="service-enterprise.html">企业服务</a>
+    </div>
+    <a href="cases.html">客户案例</a><a href="news.html">行业动态</a><a href="faq.html">常见问题</a>
+    <a href="contact.html">联系我们</a>
+    <div class="mobile-cta"><a href="tel:15217609018" class="btn-primary" style="justify-content:center;">电话咨询</a><a href="contact.html" class="btn-outline" style="justify-content:center;">免费咨询</a></div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">首页</a> &gt; <a href="services.html">主营业务</a> &gt; 数电发票</div>
+      <h1>数电发票 <span class="highlight">详细方案</span></h1>
+      <p class="subtitle">数电+纸质双兼容 · 金税四期合规 · 扫码即开票 · 系统无缝对接</p>
+    </div>
+  </section>
+
+  <!-- 方案对比：传统 vs 数电 -->
+  <section class="content-section">
+    <div class="container">
+      <h2>传统发票 vs <span class="highlight">数电发票</span></h2>
+      <p class="section-desc">金税四期全面推行数电发票，传统模式已跟不上监管要求</p>
+      <div class="compare-table">
+        <table>
+          <thead><tr><th>对比维度</th><th>传统纸质发票</th><th>数电发票方案</th></tr></thead>
+          <tbody>
+            <tr><td>开票方式</td><td>税控盘 + 电脑 + 打印机</td><td>手机/电脑扫码即开</td></tr>
+            <tr><td>发票交付</td><td>快递/自取/邮箱</td><td>微信/短信/邮件即时推送</td></tr>
+            <tr><td>红冲流程</td><td>双方确认后手工操作</td><td>线上申请，一键红冲</td></tr>
+            <tr><td>税务合规计划</td><td>事后补票、易遗漏</td><td>系统自动匹配，实时上传</td></tr>
+            <tr class="highlight-row"><td>单张开票耗时</td><td>平均 3-5 分钟</td><td>平均 3 秒</td></tr>
+            <tr class="highlight-row"><td>年维护成本</td><td>税控盘年费 + 纸质发票成本</td><td>零维护成本</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 逻辑架构 -->
+  <section class="content-section alt">
+    <div class="container">
+      <h2>系统<span class="highlight">逻辑架构</span></h2>
+      <p class="section-desc">多端协同、自动上传、闭环管理</p>
+      <div class="flow-diagram">
+        <svg viewBox="0 0 800 340" fill="none">
+          <!-- Top: 业务端 -->
+          <rect x="60" y="10" width="160" height="70" rx="10" fill="#FFF7ED" stroke="#FF8C00" stroke-width="1.5"/>
+          <text x="140" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#D47500">收银/POS系统</text>
+          <text x="140" y="60" text-anchor="middle" font-size="11" fill="#888">门店消费场景</text>
+
+          <rect x="320" y="10" width="160" height="70" rx="10" fill="#FFF7ED" stroke="#FF8C00" stroke-width="1.5"/>
+          <text x="400" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#D47500">ERP/业务系统</text>
+          <text x="400" y="60" text-anchor="middle" font-size="11" fill="#888">企业采购/费用场景</text>
+
+          <rect x="580" y="10" width="160" height="70" rx="10" fill="#FFF7ED" stroke="#FF8C00" stroke-width="1.5"/>
+          <text x="660" y="40" text-anchor="middle" font-size="13" font-weight="700" fill="#D47500">H5/微信公众号</text>
+          <text x="660" y="60" text-anchor="middle" font-size="11" fill="#888">顾客自助开票</text>
+
+          <!-- Arrows down -->
+          <line x1="140" y1="80" x2="140" y2="120" stroke="#FF8C00" stroke-width="2" marker-end="url(#a2)"/>
+          <line x1="400" y1="80" x2="400" y2="120" stroke="#FF8C00" stroke-width="2" marker-end="url(#a2)"/>
+          <line x1="660" y1="80" x2="660" y2="120" stroke="#FF8C00" stroke-width="2" marker-end="url(#a2)"/>
+
+          <!-- Middle: 烽享发票中台 -->
+          <rect x="100" y="120" width="600" height="80" rx="12" fill="#FF8C00" opacity="0.08" stroke="#FF8C00" stroke-width="2"/>
+          <text x="400" y="155" text-anchor="middle" font-size="16" font-weight="700" fill="#D47500">烽享财税 · 发票管理中台</text>
+          <text x="400" y="178" text-anchor="middle" font-size="12" fill="#666">发票生成 · 红冲管理 · 抬头校验 · 额度监控 · 数据看板</text>
+
+          <!-- Arrow down -->
+          <line x1="400" y1="200" x2="400" y2="240" stroke="#FF8C00" stroke-width="2" marker-end="url(#a2)"/>
+
+          <!-- Bottom: 税务端 -->
+          <rect x="100" y="240" width="600" height="80" rx="12" fill="#FFF7ED" stroke="#FFA940" stroke-width="1.5"/>
+          <text x="400" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#D47500">国家税务总局 · 电子发票服务平台</text>
+          <text x="400" y="295" text-anchor="middle" font-size="12" fill="#666">实时上传 · 自动验签 · 全国可查 · 永久存储</text>
+
+          <defs><marker id="a2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#FF8C00"/></marker></defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心功能 -->
+  <section class="content-section">
+    <div class="container">
+      <h2>六大<span class="highlight">核心功能</span></h2>
+      <p class="section-desc">不是简单的开票工具，而是完整的发票管理解决方案</p>
+      <div class="feature-grid">
+        <div class="feature-card"><h3>扫码极速开票</h3><p>顾客扫码即开票，抬头自动填充，支持企业/个人双模式。餐饮/零售门店开票从5分钟降至3秒，大幅提升消费体验。</p></div>
+        <div class="feature-card"><h3>API系统对接</h3><p>提供标准 REST API 接口，与ERP、POS、电商系统无缝集成。已适配金蝶、用友、有赞等主流平台，开发周期3-7天完成对接。</p></div>
+        <div class="feature-card"><h3>批量开票处理</h3><p>每月数千张发票一键导入批量处理，支持Excel模板导入、API批量调用，单次最高可处理5000张发票。</p></div>
+        <div class="feature-card"><h3>智能红冲管理</h3><p>退货即自动触发红冲流程，原票关联、金额核验、双方确认全自动化。杜绝红冲遗漏导致的税务风险。</p></div>
+        <div class="feature-card"><h3>额度实时监控</h3><p>月度开票额度可视化监控，临近上限自动预警。多维度统计看板：按门店/品类/日期分析开票数据。</p></div>
+        <div class="feature-card"><h3>电子存档合规</h3><p>数电发票自动归档，PDF/XML/OFD多格式存储。满足税务稽查5年存档要求，随时检索调取。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 适用场景 -->
+  <section class="content-section alt">
+    <div class="container">
+      <h2>适用<span class="highlight">行业场景</span></h2>
+      <p class="section-desc">不同行业的开票痛点，我们都有针对性方案</p>
+      <div class="scenario-grid">
+        <div class="scenario-card">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <h4>餐饮连锁</h4><p>扫码点餐+自动开票，对接收银系统，顾客扫码即取票，高峰期每单省5分钟</p>
+        </div>
+        <div class="scenario-card">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <h4>电商平台</h4><p>订单自动关联开票，支持拆单/合并开票，批量处理日订单量万级</p>
+        </div>
+        <div class="scenario-card">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <h4>物业公司</h4><p>业主APP一键开票，物业费/水电费自动归集，月结批量生成</p>
+        </div>
+        <div class="scenario-card">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <h4>跨境贸易</h4><p>多币种换算+汇率实时同步，出口退税票据自动整理，合规高效</p>
+        </div>
+        <div class="scenario-card">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <h4>科技企业</h4><p>SaaS订阅/项目制开票，灵活设置开票周期，API对接业务系统</p>
+        </div>
+        <div class="scenario-card">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="5" width="22" height="14" rx="2"/><path d="M12 5v14M8 9h8M8 13h6"/></svg>
+          <h4>零售门店</h4><p>收银台即开票点，不需要额外设备，手机/Pad即可完成全部操作</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 对接流程 -->
+  <section class="content-section">
+    <div class="container">
+      <h2>上线<span class="highlight">实施流程</span></h2>
+      <p class="section-desc">从申请到上线，最快3个工作日完成</p>
+      <div class="process-steps">
+        <div class="process-step"><div class="step-number">1</div><div class="step-content"><h4>资质审核</h4><p>提交营业执照、税号信息，平台完成数电发票资质审核与税局备案，1个工作日内完成。</p></div></div>
+        <div class="process-step"><div class="step-number">2</div><div class="step-content"><h4>系统配置</h4><p>根据企业规模选择SaaS版或API对接版，配置开票规则、额度设置、审批流程和抬头白名单。</p></div></div>
+        <div class="process-step"><div class="step-number">3</div><div class="step-content"><h4>联调测试</h4><p>模拟开票全流程测试，多场景验证（正票、红冲、批量、扫码），确保与现有系统无缝衔接。</p></div></div>
+        <div class="process-step"><div class="step-number">4</div><div class="step-content"><h4>培训上线</h4><p>操作培训（线上/线下可选），正式切换上线，专属技术团队7×12小时运维支持。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>准备切换数电发票？</h2>
+      <p>免费获取《数电发票上线评估报告》，帮您规划最优切换路径</p>
+      <a href="contact.html" class="btn-white">免费咨询<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo"><img src="images/logo.png" alt="烽享财税" style="height:48px;vertical-align:middle;"></a>
+          <p>广东烽享联动信息科技有限公司<br>广州烽享云科技信息有限公司<br>广州烽享企业服务有限公司<br>专注企业全生命周期一站式财税综合服务</p>
+        </div>
+        <div class="footer-col"><h4>主营业务</h4><a href="service-flexible.html">灵活用工</a><a href="service-invoice.html">数电发票</a><a href="service-business.html">工商财税</a><a href="service-tax.html">税务咨询</a><a href="service-enterprise.html">企业服务</a></div>
+        <div class="footer-col"><h4>常见问题</h4><a href="faq.html">全部FAQ</a><a href="faq.html#flexible">灵活用工</a><a href="faq.html#invoice">数电发票</a><a href="faq.html#business">工商注册</a><a href="faq.html#tax">税务合规</a><a href="faq.html#about">关于我们</a></div>
+        <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
+        <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2023-2026 烽享财税 FengXiangTax. All Rights Reserved.</div>
+        <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2024339069号</a> | <img src="images/gonganlogo.png" alt="公安备案" style="height:14px;vertical-align:middle;margin-right:4px;"><a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener">粤公网安备44010602011937号</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

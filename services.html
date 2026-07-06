@@ -27,6 +27,7 @@
       border-bottom: 1px solid var(--border-color);
     }
     .service-block:last-child { border-bottom: none; }
+    .service-block-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .service-block:nth-child(even) { direction: rtl; }
     .service-block:nth-child(even) > * { direction: ltr; }
     .service-block-text .service-tag {
@@ -73,7 +74,7 @@
           "@type": "Service", "serviceType": "灵活用工",
           "name": "灵活用工平台",
           "description": "灵活用工平台，多税地解决方案，帮助企业合规降本，规避用工风险。覆盖物流配送、在线教育、共享出行、网络直播等行业。",
-          "url": "https://www.fengxiangld.cn/services.html#flexible",
+          "url": "https://www.fengxiangld.cn/service-flexible.html",
           "provider": {"@type": "Organization", "name": "烽享财税"},
           "areaServed": {"@type": "AdministrativeArea", "name": "广东省"}
         }
@@ -84,7 +85,7 @@
           "@type": "Service", "serviceType": "数电发票",
           "name": "数电发票服务",
           "description": "兼容数电发票和纸质发票，紧跟金税四期政策，确保发票管理合规高效。",
-          "url": "https://www.fengxiangld.cn/services.html#invoice",
+          "url": "https://www.fengxiangld.cn/service-invoice.html",
           "provider": {"@type": "Organization", "name": "烽享财税"}
         }
       },
@@ -94,7 +95,7 @@
           "@type": "Service", "serviceType": "工商财税",
           "name": "工商财税服务",
           "description": "广东全省各地市覆盖，公司注册、代理记账、商标注册、软著申请一站式服务。",
-          "url": "https://www.fengxiangld.cn/services.html#business",
+          "url": "https://www.fengxiangld.cn/service-business.html",
           "provider": {"@type": "Organization", "name": "烽享财税"},
           "areaServed": {"@type": "AdministrativeArea", "name": "广东省"}
         }
@@ -104,8 +105,8 @@
         "item": {
           "@type": "Service", "serviceType": "税务咨询",
           "name": "税务咨询服务",
-          "description": "专业涉税咨询，金税四期合规筹划，税务稽查应对，税务合规计划方案。",
-          "url": "https://www.fengxiangld.cn/services.html#tax",
+          "description": "专业涉税咨询，金税四期税务合规计划，税务稽查应对，合规方案落地。",
+          "url": "https://www.fengxiangld.cn/service-tax.html",
           "provider": {"@type": "Organization", "name": "烽享财税"}
         }
       },
@@ -115,7 +116,7 @@
           "@type": "Service", "serviceType": "企业服务",
           "name": "企业数字化服务",
           "description": "小程序开发、网站建设、地图推广、大众点评运营、餐饮数字化转型。",
-          "url": "https://www.fengxiangld.cn/services.html#enterprise",
+          "url": "https://www.fengxiangld.cn/service-enterprise.html",
           "provider": {"@type": "Organization", "name": "烽享财税"}
         }
       }
@@ -144,7 +145,16 @@
       <nav class="main-nav">
         <a href="index.html">首页</a>
         <a href="about.html">关于我们</a>
-        <a href="services.html" class="active">主营业务</a>
+        <div class="dropdown">
+          <a href="services.html" class="active">主营业务</a>
+          <div class="dropdown-menu">
+            <a href="service-flexible.html">灵活用工</a>
+            <a href="service-invoice.html">数电发票</a>
+            <a href="service-business.html">工商财税</a>
+            <a href="service-tax.html">税务咨询</a>
+            <a href="service-enterprise.html">企业服务</a>
+          </div>
+        </div>
         <a href="cases.html">客户案例</a>
         <a href="news.html">行业动态</a>
         <a href="faq.html" style="color:var(--primary);font-weight:600;">常见问题</a>
@@ -161,6 +171,13 @@
     <a href="index.html">首页</a>
     <a href="about.html">关于我们</a>
     <a href="services.html" class="active">主营业务</a>
+    <div class="mobile-dropdown-menu">
+      <a href="service-flexible.html">灵活用工</a>
+      <a href="service-invoice.html">数电发票</a>
+      <a href="service-business.html">工商财税</a>
+      <a href="service-tax.html">税务咨询</a>
+      <a href="service-enterprise.html">企业服务</a>
+    </div>
     <a href="cases.html">客户案例</a>
     <a href="news.html">行业动态</a>
     <a href="faq.html" style="color:var(--primary);">常见问题</a>
@@ -191,7 +208,10 @@
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>规避用工风险</div>
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>全流程电子化</div>
           </div>
-          <a href="contact.html" class="btn-primary">立即咨询</a>
+          <div class="service-block-actions">
+            <a href="contact.html" class="btn-primary">立即咨询</a>
+            <a href="service-flexible.html" class="btn-outline">详细方案</a>
+          </div>
         </div>
         <div class="service-block-visual">
           <svg viewBox="0 0 200 200" fill="none">
@@ -219,7 +239,10 @@
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>一键便捷开票</div>
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>降低税务风险</div>
           </div>
-          <a href="contact.html" class="btn-primary">立即咨询</a>
+          <div class="service-block-actions">
+            <a href="contact.html" class="btn-primary">立即咨询</a>
+            <a href="service-invoice.html" class="btn-outline">详细方案</a>
+          </div>
         </div>
         <div class="service-block-visual">
           <svg viewBox="0 0 200 200" fill="none">
@@ -245,7 +268,10 @@
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>商标/软著申请</div>
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>全省地市覆盖</div>
           </div>
-          <a href="contact.html" class="btn-primary">立即咨询</a>
+          <div class="service-block-actions">
+            <a href="contact.html" class="btn-primary">立即咨询</a>
+            <a href="service-business.html" class="btn-outline">详细方案</a>
+          </div>
         </div>
         <div class="service-block-visual">
           <svg viewBox="0 0 200 200" fill="none">
@@ -268,7 +294,10 @@
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>税务合规计划方案</div>
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>政策解读更新</div>
           </div>
-          <a href="contact.html" class="btn-primary">立即咨询</a>
+          <div class="service-block-actions">
+            <a href="contact.html" class="btn-primary">立即咨询</a>
+            <a href="service-tax.html" class="btn-outline">详细方案</a>
+          </div>
         </div>
         <div class="service-block-visual">
           <svg viewBox="0 0 200 200" fill="none">
@@ -291,7 +320,10 @@
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>餐饮数字化升级</div>
             <div class="service-feature"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>地图/点评推广</div>
           </div>
-          <a href="contact.html" class="btn-primary">立即咨询</a>
+          <div class="service-block-actions">
+            <a href="contact.html" class="btn-primary">立即咨询</a>
+            <a href="service-enterprise.html" class="btn-outline">详细方案</a>
+          </div>
         </div>
         <div class="service-block-visual">
           <svg viewBox="0 0 200 200" fill="none">
@@ -352,7 +384,7 @@
           
           </div>
         </div>
-        <div class="footer-col"><h4>主营业务</h4><a href="services.html#flexible">灵活用工</a><a href="services.html#invoice">数电发票</a><a href="services.html#business">工商财税</a><a href="services.html#tax">税务咨询</a><a href="services.html#enterprise">企业服务</a></div>
+        <div class="footer-col"><h4>主营业务</h4><a href="service-flexible.html">灵活用工</a><a href="service-invoice.html">数电发票</a><a href="service-business.html">工商财税</a><a href="service-tax.html">税务咨询</a><a href="service-enterprise.html">企业服务</a></div>
         <div class="footer-col"><h4>常见问题</h4><a href="faq.html">全部FAQ</a><a href="faq.html#flexible">灵活用工</a><a href="faq.html#invoice">数电发票</a><a href="faq.html#business">工商注册</a><a href="faq.html#tax">税务合规</a><a href="faq.html#about">关于我们</a></div>
         <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a></div>
         <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
