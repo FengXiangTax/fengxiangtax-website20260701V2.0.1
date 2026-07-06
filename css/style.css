@@ -1011,7 +1011,7 @@ ul, ol { list-style: none; }
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
-
+/* 2026-07-06 update */
 .dropdown-menu a {
   display: block;
   padding: 8px 20px;
