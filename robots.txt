@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# 静态资源不浪费爬虫额度
+Disallow: /css/
+Disallow: /js/
+
+# 百度爬虫（国内流量主力）
+User-agent: Baiduspider
+Allow: /
+
+# 常见 AI 爬虫放行（确保能被 AI 搜索引擎抓取）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# 站点地图
+Sitemap: https://www.fengxiangld.cn/sitemap.xml
