@@ -21,6 +21,13 @@
     .kb-hero h1{font-size:34px;font-weight:700;margin-bottom:10px;}
     .kb-hero h1 .highlight{color:var(--primary);}
     .kb-hero p{color:var(--text-secondary);font-size:16px;}
+    /* 搜索框 */
+    .kb-search-wrap{max-width:600px;margin:0 auto 10px;position:relative;}
+    .kb-search{width:100%;padding:14px 24px;padding-right:48px;border:2px solid var(--border-color);border-radius:var(--radius-md);font-size:15px;font-family:inherit;transition:var(--transition);background:var(--bg-white);box-sizing:border-box;}
+    .kb-search:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(255,140,0,0.1);}
+    .kb-search::placeholder{color:var(--text-light);}
+    .kb-search-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--text-light);pointer-events:none;}
+    .kb-tip{font-size:13px;color:var(--text-light);margin-bottom:0;}
     .kb-wrap{padding:36px 0 60px;}
     .kb-nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;justify-content:center;}
     .kb-nav a{font-size:13px;padding:6px 14px;border:1px solid var(--border-color);border-radius:20px;color:var(--text-secondary);text-decoration:none;background:#fff;}
@@ -160,7 +167,7 @@
   ]
 }
   </script>
-<script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?f70e87de0b721af21107b215288a740b";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
+<script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?119712cfe3f9e7ac3a66ff42374c03ae";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
 <meta name="baidu-site-verification" content="codeva-YqjptmamZg" />
 <meta name="google-site-verification" content="uOpAfVH5bDkdSbfk2ntZ-e3tWuNgAGETM1rh2o__r3Y" />
 </head>
@@ -172,11 +179,11 @@
       <nav class="main-nav">
         <a href="index.html">首页</a>
         <a href="about.html">关于我们</a>
-        <div class="dropdown"><a href="services.html">主营业务</a><div class="dropdown-menu"><a href="service-flexible.html">灵活用工</a><a href="choose.html">平台选型</a><a href="service-invoice.html">数电发票</a><a href="service-business.html">工商财税</a><a href="service-tax.html">税务咨询</a><a href="service-enterprise.html">企业服务</a></div></div>
+        <div class="dropdown"><a href="services.html">主营业务</a><div class="dropdown-menu"><a href="service-flexible.html">灵活用工</a><a href="service-invoice.html">数电发票</a><a href="service-business.html">工商财税</a><a href="service-tax.html">税务咨询</a><a href="service-enterprise.html">企业服务</a></div></div>
         <a href="cases.html">客户案例</a>
         <a href="news.html">行业动态</a>
         <a href="faq.html">常见问题</a>
-        <a href="pricing.html">价格参考</a>
+        <a href="pricing.html">收费标准</a>
         <a href="contact.html">联系我们</a>
       </nav>
       <div class="header-cta">
@@ -191,6 +198,11 @@
     <div class="container">
       <h1>财税<span class="highlight">知识库</span></h1>
       <p>用大白话讲清高频财税概念，帮企业快速建立基础认知</p>
+      <div class="kb-search-wrap">
+        <input type="text" class="kb-search" id="kbSearch" placeholder="输入关键词搜索，如：灵活用工、金税四期、一人公司..." autocomplete="off">
+        <svg class="kb-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </div>
+      <p class="kb-tip">💡 输入关键词即可快速定位词条，支持模糊匹配</p>
     </div>
   </section>
 
@@ -202,6 +214,9 @@
         <a href="#heding">核定征收</a><a href="#fakeinvoice">虚开发票</a><a href="#register">公司注册</a>
         <a href="#trademark">商标注册</a><a href="#hightech">高新认定</a><a href="#geo">GEO推广</a>
         <a href="#custody">银行存管</a><a href="#multitax">多税地</a><a href="#entity">个体/有限公司</a>
+        <span style="border-top:1px solid var(--border-color);margin:4px 8px 0;"></span>
+        <a href="#policy" style="color:var(--primary);font-weight:600;">📋 政策文件速查</a>
+        <a href="#boss" style="color:var(--primary);font-weight:600;">💼 老板必知常识</a>
       </div>
 
       <section class="kb-term" id="flexible">
@@ -354,6 +369,105 @@
         </ul>
       </section>
 
+      <!-- ==================== 政策文件速查 ==================== -->
+      <h2 class="kb-section-title" style="font-size:26px;font-weight:700;margin:40px 0 20px;text-align:center;color:var(--text-primary);">
+        📋 重要<span style="color:var(--primary);">财税政策文件</span>速查
+      </h2>
+      <p style="text-align:center;color:var(--text-secondary);font-size:14px;margin-bottom:24px;">按时间先后排列，附国家税务总局 / 国务院权威原文链接，建议收藏</p>
+
+      <section class="kb-term" id="policy">
+        <h2>📅 2023年 | 中共中央 国务院重要意见</h2>
+        <div style="margin-top:12px;">
+          <div style="background:var(--primary-bg);border-left:4px solid var(--primary);padding:14px 18px;border-radius:6px;margin-bottom:12px;">
+            <h3 style="font-size:16px;margin:0 0 6px;color:var(--text-primary);">
+              <strong>国发〔2023〕15号</strong> — 关于促进民营经济发展壮大的意见
+              <a href="https://www.gov.cn/zhengce/202307/content_6893055.htm" target="_blank" rel="noopener" style="font-size:13px;color:var(--primary);margin-left:8px;">🔗 原文链接 »</a>
+            </h3>
+            <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0;">明确民营经济是推进中国式现代化的生力军，从优化营商环境、加大减税降费、强化要素支持等方面提出 31 条举措。企业老板务必关注其中的税费优惠与产权保护条款。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="kb-term" style="border-color:var(--primary-light,#ffe0b3);">
+        <h2>📅 2025年 | 互联网平台企业涉税信息（国务院令 + 税务总局公告）</h2>
+        <div style="margin-top:12px;">
+          <div style="background:#fff;border:1px solid var(--border-color);padding:14px 18px;border-radius:6px;margin-bottom:12px;">
+            <h3 style="font-size:16px;margin:0 0 6px;color:var(--text-primary);">
+              <strong>国务院令第810号</strong> — 互联网平台企业涉税信息报送规定
+              <a href="https://www.gov.cn/zhengce/content/202506/content_7029052.htm" target="_blank" rel="noopener" style="font-size:13px;color:var(--primary);margin-left:8px;">🔗 原文链接 »</a>
+            </h3>
+            <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0;">2025年6月20日公布施行。要求互联网平台企业（含灵活用工平台）按季度向税务机关报送平台内经营者和从业人员的身份信息、收入信息。这是灵活用工行业的核心上位法，平台合规的硬门槛。</p>
+          </div>
+          <div style="background:var(--primary-bg);border-left:4px solid var(--primary);padding:14px 18px;border-radius:6px;margin-bottom:12px;">
+            <h3 style="font-size:16px;margin:0 0 6px;color:var(--text-primary);">
+              <strong>国家税务总局公告2025年第15号</strong> — 互联网平台企业报送涉税信息有关事项
+              <a href="https://fgk.chinatax.gov.cn/zcfgk/c100012/c5241477/content.html" target="_blank" rel="noopener" style="font-size:13px;color:var(--primary);margin-left:8px;">🔗 原文链接 »</a>
+            </h3>
+            <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0;">2025年6月26日发布，配套国务院令810号，明确平台企业报送涉税信息的具体范围、口径与报送时间（季度终了次月内）。</p>
+          </div>
+          <div style="background:var(--primary-bg);border-left:4px solid var(--primary);padding:14px 18px;border-radius:6px;margin-bottom:12px;">
+            <h3 style="font-size:16px;margin:0 0 6px;color:var(--text-primary);">
+              <strong>国家税务总局公告2025年第16号</strong> — 平台内从业人员扣缴申报与税收政策
+              <a href="https://fgk.chinatax.gov.cn/zcfgk/c100012/c5241472/content.html" target="_blank" rel="noopener" style="font-size:13px;color:var(--primary);margin-left:8px;">🔗 原文链接 »</a>
+            </h3>
+            <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0;">2025年6月26日发布，明确平台企业为从业人员办理扣缴申报、代办申报，劳务报酬所得按累计预扣法，直接关系灵活用工从业人员的个税处理与合规。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 老板必知常识 ==================== -->
+      <h2 class="kb-section-title" style="font-size:26px;font-weight:700;margin:44px 0 20px;text-align:center;color:var(--text-primary);">
+        💼 企业老板<span style="color:var(--primary);">务必了解</span>的常识
+      </h2>
+      <p style="text-align:center;color:var(--text-secondary);font-size:14px;margin-bottom:24px;">很多老板因为不懂这些常识踩坑甚至被罚，花几分钟了解能省大麻烦</p>
+
+      <section class="kb-term" id="boss" style="border-color:var(--primary-light,#ffe0b3);background:linear-gradient(135deg,#fffbf5 0%,#fff 100%);">
+        <h2>什么是一人公司（OPC）？和个体户有什么区别？</h2>
+        <p class="def">一人公司（One Person Company）是指只有一个自然人股东或一个法人股东的有限责任公司。2024年7月1日实施的新《公司法》正式确立了一人公司的法律地位。</p>
+        <ul>
+          <li><strong>核心优势：</strong>承担<strong>有限责任</strong>（个人财产和公司财产分离），这是与个体户最大的区别</li>
+          <li><strong>注册资本：</strong>新公司法要求5年内实缴到位，一人公司也不例外</li>
+          <li><strong>风险提示：</strong>如果公司财产和个人财产混同（公私不分），可能被"揭开公司面纱"，股东仍需承担连带责任</li>
+          <li><strong>适合人群：</strong>想做生意但怕担无限责任的创业者；已有业务需要规范化运营的个体经营者</li>
+          <li><strong>对比个体户：</strong>个体户交个人所得税，一人公司交企业所得税+分红个税，但前者承担无限责任，后者承担有限责任</li>
+        </ul>
+      </section>
+
+      <section class="kb-term" id="boss" style="border-color:var(--primary-light,#ffe0b3);background:linear-gradient(135deg,#fffbf5 0%,#fff 100%);">
+        <h2>企业老板/股东如何合规地从公司拿钱？</h2>
+        <p class="def">这是老板们最关心的问题之一——公司赚了钱怎么合法拿到手，又不交冤枉税？以下是几种常见方式及注意事项。</p>
+        <ul>
+          <li><strong>方式一：工资薪金（最正规）</strong>— 按月发放工资并正常申报个税。年薪不超过综合所得免征额部分基本不用交个税，同时公司可抵扣工资成本</li>
+          <li><strong>方式二：年终奖（注意政策变化）</strong>— 单独计税优惠政策延续到2027年底，合理利用可有效节税。但需关注后续政策调整</li>
+          <li><strong>方式三：分红</strong>— 公司缴纳25%（或15%）企业所得税后，再分配利润给股东，股东按20%缴纳分红个税。综合税率较高但完全合法</li>
+          <li><strong>方式四：报销（红线！）</strong>— <span style="color:#d32f2f;">⚠️ 找票报销是违法的</span>。金税四期下资金流与发票流自动比对，虚开发票、无真实业务支撑的报销极易触发稽查预警</li>
+          <li><strong>方式五：借款给股东</strong>— 税法规定：纳税年度终了后既不归还又未用于生产经营的，视同对股东的分红征收20%个税（财税〔2003〕158号）。<span style="color:#d32f2f;">长期挂账"其他应收款"是大坑</span></li>
+          <li><strong>方式六：合理的费用列支</strong>— 差旅费、业务招待费、办公费用等真实发生且与经营相关的支出可以正常报销，但要保留完整凭证链</li>
+          <li><strong>最佳实践：</strong>工资+分红的组合方案，配合专业税务筹划，既能合规拿钱又能优化税负。建议每年做一次税务健康检查</li>
+        </ul>
+      </section>
+
+      <section class="kb-term" id="boss" style="border-color:var(--primary-light,#ffe0b3);background:linear-gradient(135deg,#fffbf5 0%,#fff 100%);">
+        <h2>公司账上钱多≠老板随便用！这些雷区千万别踩</h2>
+        <ul>
+          <li><strong>❌ 公私账户混用</strong> — 用个人微信/支付宝收客户款项，直接用于个人消费。金税四期下银行数据与税务打通，一查一个准</li>
+          <li><strong>❌ "备用金"长期挂账</strong> — 以借备用金名义从公司取款后不归还或无法说明用途，视为变相分红补缴个税</li>
+          <li><strong>❌ 给家人发"空饷"</strong> — 把没在公司工作的亲属列为员工发放工资。没有真实劳动关系+没有实际工作=虚假工资扣除，涉嫌偷税</li>
+          <li><strong>❌ 不记账报税</strong> — 公司不经营就不报税？非正常户→罚款→法人征信黑名单→限制高消费→影响孩子升学。零申报也要按时做</li>
+          <li><strong>✅ 正确做法：</strong>建立规范的财务制度，公私分明，每笔收支都有据可查。每月记账报税，每年审计一次。成本远低于被罚的成本</li>
+        </ul>
+      </section>
+
+      <section class="kb-term" id="boss" style="border-color:var(--primary-light,#ffe0b3);background:linear-gradient(135deg,#fffbf5 0%,#fff 100%);">
+        <h2>小规模纳税人转一般纳税人：什么时候该转？</h2>
+        <ul>
+          <li><strong>强制标准：</strong>连续12个月销售额超过500万元（不含税），必须登记为一般纳税人</li>
+          <li><strong>主动升级的好处：</strong>可开具增值税专用发票（大客户通常要求）；进项税额可抵扣实际税负不一定更高；企业形象更好利于招投标</li>
+          <li><strong>什么时候不该急：</strong>如果主要客户不需要专票、自身进项很少、行业利润率低，小规模纳税人身份反而更划算（尤其是享受1%征收率期间）</li>
+          <li><strong>建议：</strong>在接近500万门槛前3-6个月开始规划，测算两种身份下的实际税负差异后再决定</li>
+        </ul>
+      </section>
+
       <div class="price-cta" style="text-align:center;margin-top:36px;">
         <a href="contact.html" style="display:inline-block;background:var(--primary);color:#fff;padding:14px 36px;border-radius:var(--radius-md);font-weight:600;text-decoration:none;">还有疑问？免费咨询财税顾问</a>
       </div>
@@ -368,7 +482,7 @@
           <p>广东烽享联动信息科技有限公司<br>专注企业全生命周期一站式财税综合服务<br>秉承"分享、专注、审慎"的企业价值观</p>
         </div>
         <div class="footer-col"><h4>主营业务</h4><a href="service-flexible.html">灵活用工</a><a href="service-invoice.html">数电发票</a><a href="service-business.html">工商财税</a><a href="service-tax.html">税务咨询</a><a href="service-enterprise.html">企业服务</a></div>
-        <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a><a href="faq.html">常见问题</a><a href="knowledge.html">知识库</a></div>
+        <div class="footer-col"><h4>关于烽享</h4><a href="about.html">公司介绍</a><a href="cases.html">客户案例</a><a href="news.html">行业动态</a><a href="faq.html">常见问题</a><a href="knowledge.html">知识库</a><a href="choose.html">平台选型</a><a href="pricing.html">收费标准</a></div>
         <div class="footer-col"><h4>联系我们</h4><a href="mailto:market@fengxiangtax.com">market@fengxiangtax.com</a><a href="tel:15217609018">152-1760-9018</a><a href="contact.html">在线咨询</a><a href="https://map.baidu.com/search/广州市海珠区新港中路397号" target="_blank">广州市海珠区新港中路397号 T.I.T创意园自编3-9号</a></div>
       </div>
       <div class="footer-bottom">
@@ -379,5 +493,40 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // 知识库搜索功能
+    (function() {
+      var searchInput = document.getElementById('kbSearch');
+      if (!searchInput) return;
+      var terms = Array.prototype.slice.call(document.querySelectorAll('.kb-term'));
+      var titles = Array.prototype.slice.call(document.querySelectorAll('.kb-section-title'));
+
+      searchInput.addEventListener('input', function() {
+        var keyword = this.value.toLowerCase().trim();
+
+        if (!keyword) {
+          terms.forEach(function(t) { t.style.display = ''; });
+          titles.forEach(function(t) { t.style.display = ''; });
+          return;
+        }
+
+        terms.forEach(function(term) {
+          var text = term.textContent.toLowerCase();
+          term.style.display = text.indexOf(keyword) !== -1 ? '' : 'none';
+        });
+
+        // 分组标题：其后相邻的词条全部隐藏时，一并隐藏标题
+        titles.forEach(function(title) {
+          var next = title.nextElementSibling;
+          var anyVisible = false;
+          while (next && !(next.classList && next.classList.contains('kb-section-title'))) {
+            if (next.classList && next.classList.contains('kb-term') && next.style.display !== 'none') anyVisible = true;
+            next = next.nextElementSibling;
+          }
+          title.style.display = anyVisible ? '' : 'none';
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
